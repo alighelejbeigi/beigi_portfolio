@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
@@ -59,7 +58,7 @@ class _AboutSectionState extends State<AboutSection> {
                         height: 25.0,
                       ),
                       Text(
-                        "I'm Agnel Selvan, A Flutter and iOS Developer and Technical Blog Writer",
+                        "I'm Ali Ghelej Beigi, A Flutter and Web Developer and Love to Create New Things",
                         style: GoogleFonts.josefinSans(
                           fontWeight: FontWeight.bold,
                           height: 1.3,
@@ -70,7 +69,7 @@ class _AboutSectionState extends State<AboutSection> {
                         height: 10.0,
                       ),
                       const Text(
-                        "I have done my Computer Science graduation at Xavier's Institute of Engineering on 2021. I have been developing Mobile Apps for more than 1 years now. I have worked as a Team and as an Indivual in various organization and launched the apps in Playstore as well as in Appstore. In my free time I use to write Technical Blog in Medium. Always love to learn new technologies and to succeed in an environment of growth and excellence and earn a job which provides me job satisfaction and self-development and help me achieve personal as well as organisational goals.",
+                        "I have done my Computer Science graduation at Bahonar University of Shiraz with a bachelor's degree on 2018. I have been developing Mobile Apps for more than 1 years now.I have worked as a Team and as an Indivual in various organization and we have plan to launch many apps in Playstore as well as in Appstore. In my free time I use to learn new technics. Always love to learn new technologies and to succeed in an environment of growth and excellence and earn a job which provides me job satisfaction and self-development and help me achieve personal as well as organisational goals.",
                         style: TextStyle(
                           color: kCaptionColor,
                           height: 1.5,
@@ -98,53 +97,53 @@ class _AboutSectionState extends State<AboutSection> {
                             scrollDirection: Axis.horizontal,
                             child: Row(
                               children: TechnologyConstants.technologyLearned
-                                  .map((e) => MouseRegion(
-                                        cursor: SystemMouseCursors.click,
-                                        child: Container(
-                                          decoration: BoxDecoration(
-                                            color: ref
-                                                    .watch(themeProvider)
-                                                    .isDarkMode
-                                                ? Colors.grey[800]
-                                                : Colors.grey[200],
-                                            borderRadius:
-                                                BorderRadius.circular(4.0),
-                                          ),
-                                          margin: const EdgeInsets.symmetric(
-                                              horizontal: 5),
-                                          padding: const EdgeInsets.symmetric(
-                                              horizontal: 8.0, vertical: 6),
-                                          child: InkWell(
-                                            onTap: () {},
-                                            child: Center(
-                                              child: Row(
-                                                children: [
-                                                  SizedBox(
-                                                    width: 20,
-                                                    height: 20,
-                                                    child: Image.asset(
-                                                      e.logo,
-                                                      package:
-                                                          'beigi_portfolio',
-                                                    ),
+                                  .map(
+                                    (e) => MouseRegion(
+                                      cursor: SystemMouseCursors.click,
+                                      child: Container(
+                                        decoration: BoxDecoration(
+                                          color: ref
+                                                  .watch(themeProvider)
+                                                  .isDarkMode
+                                              ? Colors.grey[800]
+                                              : Colors.grey[200],
+                                          borderRadius:
+                                              BorderRadius.circular(4.0),
+                                        ),
+                                        margin: const EdgeInsets.symmetric(
+                                            horizontal: 5),
+                                        padding: const EdgeInsets.symmetric(
+                                            horizontal: 8.0, vertical: 6),
+                                        child: InkWell(
+                                          onTap: () {},
+                                          child: Center(
+                                            child: Row(
+                                              children: [
+                                                SizedBox(
+                                                  width: 20,
+                                                  height: 20,
+                                                  child: Image.asset(
+                                                    e.logo,
+                                                    package: 'beigi_portfolio',
                                                   ),
-                                                  const SizedBox(
-                                                    width: 10,
+                                                ),
+                                                const SizedBox(
+                                                  width: 10,
+                                                ),
+                                                Text(
+                                                  e.name,
+                                                  style: const TextStyle(
+                                                    fontSize: 12.0,
+                                                    fontWeight: FontWeight.bold,
                                                   ),
-                                                  Text(
-                                                    e.name,
-                                                    style: const TextStyle(
-                                                      fontSize: 12.0,
-                                                      fontWeight:
-                                                          FontWeight.bold,
-                                                    ),
-                                                  ),
-                                                ],
-                                              ),
+                                                ),
+                                              ],
                                             ),
                                           ),
                                         ),
-                                      ))
+                                      ),
+                                    ),
+                                  )
                                   .toList(),
                             ),
                           ),
@@ -163,8 +162,8 @@ class _AboutSectionState extends State<AboutSection> {
                     ScreenHelper.isTablet(context))
                   Expanded(
                     flex: constraints.maxWidth > 720.0 ? 1 : 0,
-                    child: SvgPicture.asset(
-                      AppConstants.personSvg,
+                    child: Image.asset(
+                      AppConstants.personPng,
                       width: constraints.maxWidth > 720.0 ? null : 350.0,
                       package: 'beigi_portfolio',
                     ),

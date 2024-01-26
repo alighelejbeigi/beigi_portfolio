@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
-
 import 'package:responsive_framework/responsive_framework.dart';
 
 import '../../../models/header_item.dart';
@@ -31,7 +30,7 @@ class HeaderLogo extends StatelessWidget {
               text: TextSpan(
                 children: [
                   TextSpan(
-                    text: "A ",
+                    text: "A GH ",
                     style: GoogleFonts.josefinSans(
                       fontSize: 26.0,
                       fontWeight: FontWeight.bold,
@@ -42,7 +41,7 @@ class HeaderLogo extends StatelessWidget {
                     ),
                   ),
                   TextSpan(
-                    text: "Dev",
+                    text: "Dev & Sof",
                     style: GoogleFonts.josefinSans(
                       color: kPrimaryColor,
                       fontSize: 26.0,
@@ -100,7 +99,7 @@ class HeaderRow extends StatelessWidget {
         NameOnTap(
           title: "Themes",
           onTap: () {
-            Utilty.openUrl(AppConstants.mediumUrl);
+            // Utilty.openUrl(AppConstants.mediumUrl);
           },
           iconData: Icons.light_mode_outlined,
           isDarkTheme: true,

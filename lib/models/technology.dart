@@ -10,7 +10,7 @@ class TechnologyModel {
 class TechnologyConstants {
   static TechnologyModel python =
       TechnologyModel("Python", AppConstants.pythonImage);
-  static TechnologyModel php = TechnologyModel("Python", AppConstants.phpImage);
+  static TechnologyModel php = TechnologyModel("php", AppConstants.phpImage);
   static TechnologyModel flutter =
       TechnologyModel("Flutter", AppConstants.flutterImage);
   static TechnologyModel flask =
@@ -30,10 +30,7 @@ class TechnologyConstants {
 
   static List<TechnologyModel> technologyLearned = [
     flutter,
-    swift,
-    cPlus,
-    python,
     javascript,
-    flask
+    php,
   ];
 }

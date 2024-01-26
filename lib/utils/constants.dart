@@ -16,14 +16,12 @@ double getMobileMaxWidth(BuildContext context) =>
     MediaQuery.of(context).size.width * .8;
 
 class AppConstants {
-  static const linkedInUrl =
-      "https://www.linkedin.com/in/agnel-selvan-328421192/";
+  static const linkedInUrl = "https://www.linkedin.com/in/ali-ghelej-beigi/";
   static const instagramUrl = "https://www.instagram.com/_agnel.selvan_/";
   static const githubUrl = "https://github.com/AgnelSelvan";
   static const mediumUrl = "https://medium.com/@agnelselvan";
 
   static const _assets = "assets/";
-  static const _outputs = "outputs/";
 
   static const _svg = "${_assets}svg/";
   static const guySvg = "${_svg}guy.svg";
@@ -31,12 +29,17 @@ class AppConstants {
 
   static const _images = "${_assets}images/";
 
+  static const personPng = "assets/images/person.png";
   static const _socialImages = "${_images}social/";
   static const emailImage = "${_socialImages}email.png";
   static const linkedInImage = "${_socialImages}linkedin-logo.png";
   static const instaImage = "${_socialImages}instagram.png";
   static const githubImage = "${_socialImages}github.png";
-  static const mediumImage = "${_socialImages}medium.png";
+
+  static const emailImageDark = "${_socialImages}email-dark.png";
+  static const linkedInImageDark = "${_socialImages}linkedin-logo-dark.png";
+  static const instaImageDark = "${_socialImages}instagram-dark.png";
+  static const githubImageDark = "${_socialImages}github-dark.png";
 
   static const _techImages = "${_images}technology/";
   static const flutterImage = "${_techImages}flutter.png";
@@ -58,10 +61,7 @@ class AppConstants {
   static const personalFaceImage = "${_projectsImages}5.jpeg";
   static const computerStoreImage = "${_projectsImages}6.jpeg";
 
-  static const _gifs = "${_outputs}gif/";
-  static const portfolioGif = "${_gifs}mobile.gif";
-
-  static List<NameOnTap> socialLoginDatas = [
+  static List<NameOnTap> socialLoginData = [
     NameOnTap(
         title: emailImage,
         onTap: () {
@@ -82,10 +82,28 @@ class AppConstants {
         onTap: () {
           Utilty.openUrl(githubUrl);
         }),
+  ];
+
+  static List<NameOnTap> socialLoginDataDark = [
     NameOnTap(
-        title: mediumImage,
+        title: emailImageDark,
         onTap: () {
-          Utilty.openUrl(mediumUrl);
+          Utilty.openMail();
+        }),
+    NameOnTap(
+        title: linkedInImageDark,
+        onTap: () {
+          Utilty.openUrl(linkedInUrl);
+        }),
+    NameOnTap(
+        title: instaImageDark,
+        onTap: () {
+          Utilty.openUrl(instagramUrl);
+        }),
+    NameOnTap(
+        title: githubImageDark,
+        onTap: () {
+          Utilty.openUrl(githubUrl);
         }),
   ];
 }

@@ -105,7 +105,7 @@ class ProjectModel {
       project: "Flutter App",
       title: "Flutter Web Portfolio",
       description: "",
-      appPhotos: AppConstants.portfolioGif,
+      appPhotos: '',
       projectLink: "https://github.com/AgnelSelvan/Flutter-Web-Portfolio",
       techUsed: [],
       buttonText: "Github Link",
