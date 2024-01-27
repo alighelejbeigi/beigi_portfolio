@@ -52,6 +52,15 @@ class AppConstants {
   static const swiftImage = "${_techImages}swift.png";
   static const sceneKitImage = "${_techImages}scenekit.jpeg";
   static const javascriptImage = "${_techImages}javascript.png";
+  static const wpImage = "${_techImages}wp.png";
+  static const scrumImage = "${_techImages}scrum.png";
+  static const restApiImage = "${_techImages}restAPI.png";
+  static const networkPlusImage = "${_techImages}networkPlus.png";
+  static const networkAdminImage = "${_techImages}networkAdmin.png";
+  static const htmlImage = "${_techImages}html.png";
+  static const gitImage = "${_techImages}git.png";
+  static const figmaImage = "${_techImages}figma.png";
+  static const cssImage = "${_techImages}css.png";
 
   static const _projectsImages = "${_images}projects/";
   static const smartStoreImage = "${_projectsImages}1.jpeg";

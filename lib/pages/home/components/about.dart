@@ -98,47 +98,43 @@ class _AboutSectionState extends State<AboutSection> {
                             child: Row(
                               children: TechnologyConstants.technologyLearned
                                   .map(
-                                    (e) => MouseRegion(
-                                      cursor: SystemMouseCursors.click,
-                                      child: Container(
-                                        decoration: BoxDecoration(
-                                          color: ref
-                                                  .watch(themeProvider)
-                                                  .isDarkMode
-                                              ? Colors.grey[800]
-                                              : Colors.grey[200],
-                                          borderRadius:
-                                              BorderRadius.circular(4.0),
-                                        ),
-                                        margin: const EdgeInsets.symmetric(
-                                            horizontal: 5),
-                                        padding: const EdgeInsets.symmetric(
-                                            horizontal: 8.0, vertical: 6),
-                                        child: InkWell(
-                                          onTap: () {},
-                                          child: Center(
-                                            child: Row(
-                                              children: [
-                                                SizedBox(
-                                                  width: 20,
-                                                  height: 20,
-                                                  child: Image.asset(
-                                                    e.logo,
-                                                    package: 'beigi_portfolio',
-                                                  ),
+                                    (e) => Container(
+                                      decoration: BoxDecoration(
+                                        color:
+                                            ref.watch(themeProvider).isDarkMode
+                                                ? Colors.grey[800]
+                                                : Colors.grey[200],
+                                        borderRadius:
+                                            BorderRadius.circular(4.0),
+                                      ),
+                                      margin: const EdgeInsets.symmetric(
+                                          horizontal: 5),
+                                      padding: const EdgeInsets.symmetric(
+                                          horizontal: 8.0, vertical: 6),
+                                      child: InkWell(
+                                        onTap: () {},
+                                        child: Center(
+                                          child: Row(
+                                            children: [
+                                              SizedBox(
+                                                width: 20,
+                                                height: 20,
+                                                child: Image.asset(
+                                                  e.logo,
+                                                  package: 'beigi_portfolio',
                                                 ),
-                                                const SizedBox(
-                                                  width: 10,
+                                              ),
+                                              const SizedBox(
+                                                width: 10,
+                                              ),
+                                              Text(
+                                                e.name,
+                                                style: const TextStyle(
+                                                  fontSize: 12.0,
+                                                  fontWeight: FontWeight.bold,
                                                 ),
-                                                Text(
-                                                  e.name,
-                                                  style: const TextStyle(
-                                                    fontSize: 12.0,
-                                                    fontWeight: FontWeight.bold,
-                                                  ),
-                                                ),
-                                              ],
-                                            ),
+                                              ),
+                                            ],
                                           ),
                                         ),
                                       ),
