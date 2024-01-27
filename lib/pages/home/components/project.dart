@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -15,18 +17,19 @@ class ProjectSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: ScreenHelper(
-        desktop: _buildUi(kDesktopMaxWidth, context),
-        tablet: _buildUi(kTabletMaxWidth, context),
-        mobile: _buildUi(getMobileMaxWidth(context), context),
-      ),
+    return ScreenHelper(
+      desktop: _buildUi(kDesktopMaxWidth, context),
+      tablet: _buildUi(kTabletMaxWidth, context),
+      mobile: _buildUi(getMobileMaxWidth(context), context),
     );
   }
 
   Widget _buildUi(double width, BuildContext context) {
     return ScrollConfiguration(
-      behavior: ScrollConfiguration.of(context).copyWith(scrollbars: false),
+      behavior: ScrollConfiguration.of(context).copyWith(dragDevices: {
+        PointerDeviceKind.touch,
+        PointerDeviceKind.mouse,
+      }),
       child: SingleChildScrollView(
         scrollDirection: Axis.horizontal,
         child: Row(

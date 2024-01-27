@@ -150,43 +150,6 @@ List<CarouselItemModel> carouselItems(double carouselContainerHeight) =>
                   );
                 },
               ),
-              /*SizedBox(
-                    height: carouselContainerHeight - 70,
-                    child: Row(
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        crossAxisAlignment: CrossAxisAlignment.end,
-                        children:
-                      */ /*CustomThemeProvider().isDarkMode
-                      ? AppConstants.socialLoginData
-                          .map((e) => InkWell(
-                                onTap: e.onTap,
-                                child: Container(
-                                  width: 20,
-                                  height: 20,
-                                  margin: const EdgeInsets.all(10),
-                                  child: Image.asset(
-                                    e.title,
-                                    package: 'beigi_portfolio',
-                                  ),
-                                ),
-                              ))
-                          .toList()
-                      : AppConstants.socialLoginDataDark
-                          .map((e) => InkWell(
-                                onTap: e.onTap,
-                                child: Container(
-                                  width: 20,
-                                  height: 20,
-                                  margin: const EdgeInsets.all(10),
-                                  child: Image.asset(
-                                    e.title,
-                                    package: 'beigi_portfolio',
-                                  ),
-                                ),
-                              ))
-                          .toList(),*/ /*
-                    ),
-                  )*/
             ],
           ),
         ),

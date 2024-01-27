@@ -27,17 +27,11 @@ class Home extends ConsumerStatefulWidget {
 class _HomeState extends ConsumerState<Home>
     with SingleTickerProviderStateMixin {
   late HomeProvider _homeProvider;
-  final ScrollController scrollController = ScrollController();
 
   @override
   void initState() {
     _homeProvider = ref.read(homeProvider);
     super.initState();
-  }
-
-  @override
-  void dispose() {
-    super.dispose();
   }
 
   Widget _buildPage() {
@@ -46,7 +40,7 @@ class _HomeState extends ConsumerState<Home>
         ScrollConfiguration(
           behavior: ScrollConfiguration.of(context).copyWith(scrollbars: false),
           child: SingleChildScrollView(
-            physics: const BouncingScrollPhysics(),
+            physics: const AlwaysScrollableScrollPhysics(),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
