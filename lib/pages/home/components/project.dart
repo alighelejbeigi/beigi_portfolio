@@ -106,6 +106,9 @@ class ProjectSection extends StatelessWidget {
                               fontWeight: FontWeight.w900,
                               height: 1.3,
                               fontSize: 28.0,
+                              color: ref.watch(themeProvider).isDarkMode
+                                  ? Colors.white
+                                  : MyThemes.scaffoldBackgroundColor,
                             ),
                           ),
                           const SizedBox(
@@ -129,6 +132,9 @@ class ProjectSection extends StatelessWidget {
                                   style: GoogleFonts.josefinSans(
                                     fontWeight: FontWeight.w900,
                                     fontSize: 16.0,
+                                    color: ref.watch(themeProvider).isDarkMode
+                                        ? Colors.white
+                                        : MyThemes.scaffoldBackgroundColor,
                                   ),
                                 ),
                           Wrap(

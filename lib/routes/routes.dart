@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-
 import 'package:responsive_framework/responsive_framework.dart';
 
-import '../pages/demo/demo.dart';
 import '../pages/home/home.dart';
 import '../utils/constants.dart';
 
@@ -17,9 +15,6 @@ class RouterGenerator {
       case Routes.initial:
         return _GeneratePageRoute(
             widget: const Home(), routeName: settings.name);
-      case Routes.demos:
-        return _GeneratePageRoute(
-            widget: const DemoScreen(), routeName: settings.name);
       default:
         return _GeneratePageRoute(
             widget: const Home(), routeName: settings.name);
@@ -30,6 +25,7 @@ class RouterGenerator {
 class _GeneratePageRoute extends PageRouteBuilder {
   final Widget? widget;
   final String? routeName;
+
   _GeneratePageRoute({this.widget, this.routeName})
       : super(
             settings: RouteSettings(name: routeName),

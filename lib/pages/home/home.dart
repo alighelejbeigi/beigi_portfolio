@@ -73,6 +73,9 @@ class _HomeState extends ConsumerState<Home>
                       style: GoogleFonts.josefinSans(
                         fontWeight: FontWeight.w900,
                         fontSize: 36,
+                        color: ref.watch(themeProvider).isDarkMode
+                            ? Colors.white
+                            : MyThemes.scaffoldBackgroundColor,
                       ),
                     ),
                     const SizedBox(
@@ -93,8 +96,8 @@ class _HomeState extends ConsumerState<Home>
                 ProjectSection(
                   projects: ProjectModel.projects,
                 ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 28.0),
+                const Padding(
+                  padding: EdgeInsets.symmetric(vertical: 28.0),
                   child: PortfolioStats(),
                 ),
                 const SizedBox(
@@ -128,69 +131,81 @@ class _HomeState extends ConsumerState<Home>
   }
 
   @override
-  Widget build(BuildContext context) {
-    return ThemeSwitchingArea(
-      child: Scaffold(
-        key: Globals.scaffoldKey,
-        endDrawer: Drawer(
-          child: SafeArea(
-            child: Padding(
-              padding: const EdgeInsets.symmetric(
-                horizontal: 16.0,
-                vertical: 24.0,
-              ),
-              child: ListView.separated(
-                itemBuilder: (BuildContext context, int index) {
-                  return ListTile(
-                    onTap: () {
-                      if (Globals.scaffoldKey.currentState != null) {
-                        if (Globals.scaffoldKey.currentState!.isEndDrawerOpen) {
-                          Navigator.pop(context);
-                          _homeProvider.scrollBasedOnHeader(
-                              HeaderRow.headerItems[index]);
+  Widget build(BuildContext context) => ThemeSwitchingArea(
+        child: Scaffold(
+          backgroundColor: ref.watch(themeProvider).isDarkMode
+              ? MyThemes.scaffoldBackgroundColor
+              : Colors.white,
+          key: Globals.scaffoldKey,
+          endDrawer: Drawer(
+            backgroundColor: ref.watch(themeProvider).isDarkMode
+                ? MyThemes.scaffoldBackgroundColor
+                : Colors.white,
+            child: SafeArea(
+              child: Padding(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 16.0,
+                  vertical: 24.0,
+                ),
+                child: ListView.separated(
+                  itemBuilder: (BuildContext context, int index) {
+                    return ListTile(
+                      onTap: () {
+                        if (Globals.scaffoldKey.currentState != null) {
+                          if (Globals
+                              .scaffoldKey.currentState!.isEndDrawerOpen) {
+                            Navigator.pop(context);
+                            _homeProvider.scrollBasedOnHeader(
+                                HeaderRow.headerItems[index]);
+                          }
                         }
-                      }
-                    },
-                    leading: Icon(
-                      HeaderRow.headerItems[index].iconData,
-                    ),
-                    title: Text(
-                      HeaderRow.headerItems[index].title,
-                      style: const TextStyle(),
-                    ),
-                    trailing: HeaderRow.headerItems[index].isDarkTheme != null
-                        ? HeaderRow.headerItems[index].isDarkTheme!
-                            ? SizedBox(
-                                width: 50,
-                                child: CustomSwitch(
-                                  value: ref.watch(themeProvider).isDarkMode,
-                                  onChanged: (val) {
-                                    ref.read(themeProvider).changeTheme(val);
-                                    ThemeSwitcher.of(context).changeTheme(
-                                        theme: ref
-                                            .read(themeProvider)
-                                            .getCurrentTheme,
-                                        isReversed: false // default: false
-                                        );
-                                  },
-                                ),
-                              )
-                            : null
-                        : null,
-                  );
-                },
-                separatorBuilder: (BuildContext context, int index) {
-                  return const SizedBox(
-                    height: 10.0,
-                  );
-                },
-                itemCount: HeaderRow.headerItems.length,
+                      },
+                      leading: Icon(
+                        HeaderRow.headerItems[index].iconData,
+                        color: ref.watch(themeProvider).isDarkMode
+                            ? Colors.white
+                            : MyThemes.scaffoldBackgroundColor,
+                      ),
+                      title: Text(
+                        HeaderRow.headerItems[index].title,
+                        style: TextStyle(
+                          color: ref.watch(themeProvider).isDarkMode
+                              ? Colors.white
+                              : MyThemes.scaffoldBackgroundColor,
+                        ),
+                      ),
+                      trailing: HeaderRow.headerItems[index].isDarkTheme != null
+                          ? HeaderRow.headerItems[index].isDarkTheme!
+                              ? SizedBox(
+                                  width: 50,
+                                  child: CustomSwitch(
+                                    value: ref.watch(themeProvider).isDarkMode,
+                                    onChanged: (val) {
+                                      ref.read(themeProvider).changeTheme(val);
+                                      ThemeSwitcher.of(context).changeTheme(
+                                          theme: ref
+                                              .read(themeProvider)
+                                              .getCurrentTheme,
+                                          isReversed: false // default: false
+                                          );
+                                    },
+                                  ),
+                                )
+                              : null
+                          : null,
+                    );
+                  },
+                  separatorBuilder: (BuildContext context, int index) {
+                    return const SizedBox(
+                      height: 10.0,
+                    );
+                  },
+                  itemCount: HeaderRow.headerItems.length,
+                ),
               ),
             ),
           ),
+          body: _buildPage(),
         ),
-        body: _buildPage(),
-      ),
-    );
-  }
+      );
 }

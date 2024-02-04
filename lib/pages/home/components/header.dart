@@ -155,8 +155,19 @@ class HeaderRow extends StatelessWidget {
   }
 }
 
-class Header extends StatelessWidget {
+class Header extends ConsumerStatefulWidget {
   const Header({Key? key, required this.themeSwitch}) : super(key: key);
+  final Widget themeSwitch;
+
+  @override
+  ConsumerState<ConsumerStatefulWidget> createState() =>
+      _HeaderState(themeSwitch: themeSwitch);
+}
+
+class _HeaderState extends ConsumerState<Header>
+    with SingleTickerProviderStateMixin {
+  _HeaderState({required this.themeSwitch});
+
   final Widget themeSwitch;
 
   @override
@@ -172,7 +183,11 @@ class Header extends StatelessWidget {
   Widget buildMobileHeader(BuildContext context) {
     return SafeArea(
       child: Container(
-        color: Theme.of(context).scaffoldBackgroundColor.withOpacity(0.95),
+        decoration: BoxDecoration(
+            color: ref.watch(themeProvider).isDarkMode
+                ? MyThemes.scaffoldBackgroundColor
+                : Colors.white),
+        /* color: Theme.of(context).scaffoldBackgroundColor.withOpacity(0.95),*/
         padding: const EdgeInsets.symmetric(horizontal: 16.0),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -196,7 +211,11 @@ class Header extends StatelessWidget {
   // Lets plan for mobile and smaller width screens
   Widget buildHeader(BuildContext context, Widget themeSwitch) {
     return Container(
-      color: Theme.of(context).scaffoldBackgroundColor.withOpacity(0.95),
+      decoration: BoxDecoration(
+          color: ref.watch(themeProvider).isDarkMode
+              ? MyThemes.scaffoldBackgroundColor
+              : Colors.white),
+      /* color: Theme.of(context).scaffoldBackgroundColor.withOpacity(0.95),*/
       child: Container(
         padding: EdgeInsets.symmetric(
             horizontal: ScreenHelper.isDesktop(context) ? 24 : 16.0),

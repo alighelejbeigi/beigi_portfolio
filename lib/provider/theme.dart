@@ -3,7 +3,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../utils/constants.dart';
 
-
 final themeProvider = ChangeNotifierProvider(((ref) => CustomThemeProvider()));
 
 class CustomThemeProvider extends ChangeNotifier {
@@ -23,6 +22,8 @@ class CustomThemeProvider extends ChangeNotifier {
 }
 
 class MyThemes {
+  static Color scaffoldBackgroundColor = const Color.fromRGBO(7, 17, 26, 1);
+
   static final lightTheme = ThemeData(
     scaffoldBackgroundColor: Colors.white,
     colorScheme: const ColorScheme.light(),
