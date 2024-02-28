@@ -51,8 +51,8 @@ class _AboutSectionState extends State<AboutSection> {
                               const SizedBox(height: 15.0),
                               Text(
                                 "About Me",
-                                style: GoogleFonts.josefinSans(
-                                  fontWeight: FontWeight.w900,
+                                style: GoogleFonts.montserrat(
+                                  fontWeight: FontWeight.w500,
                                   height: 1.3,
                                   fontSize: 35.0,
                                   color: ref.watch(themeProvider).isDarkMode
@@ -63,7 +63,7 @@ class _AboutSectionState extends State<AboutSection> {
                               const SizedBox(height: 25.0),
                               Text(
                                 "I'm Ali Ghelej Beigi, A Flutter and Web Developer and Love to Create New Things",
-                                style: GoogleFonts.josefinSans(
+                                style: GoogleFonts.montserrat(
                                   fontWeight: FontWeight.bold,
                                   height: 1.3,
                                   fontSize: 24.0,

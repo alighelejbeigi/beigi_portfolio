@@ -30,15 +30,16 @@ class AppConstants {
   static const _images = "${_assets}images/";
 
   static const personPng = "assets/images/person.png";
+  static const logo = "assets/images/logo.png";
   static const _socialImages = "${_images}social/";
   static const emailImage = "${_socialImages}email.png";
   static const linkedInImage = "${_socialImages}linkedin-logo.png";
-  static const instaImage = "${_socialImages}instagram.png";
+  static const instagramImage = "${_socialImages}instagram.png";
   static const githubImage = "${_socialImages}github.png";
 
   static const emailImageDark = "${_socialImages}email-dark.png";
   static const linkedInImageDark = "${_socialImages}linkedin-logo-dark.png";
-  static const instaImageDark = "${_socialImages}instagram-dark.png";
+  static const instagramImageDark = "${_socialImages}instagram-dark.png";
   static const githubImageDark = "${_socialImages}github-dark.png";
 
   static const _techImages = "${_images}technology/";
@@ -82,7 +83,7 @@ class AppConstants {
           Utilty.openUrl(linkedInUrl);
         }),
     NameOnTap(
-        title: instaImage,
+        title: instagramImage,
         onTap: () {
           Utilty.openUrl(instagramUrl);
         }),
@@ -105,7 +106,7 @@ class AppConstants {
           Utilty.openUrl(linkedInUrl);
         }),
     NameOnTap(
-        title: instaImageDark,
+        title: instagramImageDark,
         onTap: () {
           Utilty.openUrl(instagramUrl);
         }),

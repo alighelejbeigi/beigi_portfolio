@@ -26,6 +26,11 @@ final List<DesignProcess> designProcesses = [
     imagePath: "assets/images/blog.png",
     subtitle: "",
   ),
+  /* DesignProcess(
+    title: "Test It",
+    imagePath: "assets/images/blog.png",
+    subtitle: "",
+  ),*/
 ];
 
 class ServiceSection extends StatelessWidget {
@@ -42,8 +47,8 @@ class ServiceSection extends StatelessWidget {
       color: Colors.yellow[400]!,
     ),
     NameIconColor(
-      title: "Technical Blog Writer",
-      iconData: Icons.article,
+      title: "UI - UX",
+      iconData: Icons.design_services,
       color: Colors.blue[400]!,
     ),
     NameIconColor(
@@ -80,8 +85,8 @@ class ServiceSection extends StatelessWidget {
                 children: [
                   Text(
                     "Productive ,\n   Experienced",
-                    style: GoogleFonts.josefinSans(
-                      fontWeight: FontWeight.w900,
+                    style: GoogleFonts.montserrat(
+                      fontWeight: FontWeight.w500,
                       height: 1.8,
                       letterSpacing: 2,
                       fontSize: 18.0,
@@ -99,9 +104,9 @@ class ServiceSection extends StatelessWidget {
                       cursor: SystemMouseCursors.click,
                       child: Text(
                         "DOWNLOAD CV",
-                        style: GoogleFonts.josefinSans(
+                        style: GoogleFonts.montserrat(
                           color: kPrimaryColor,
-                          fontWeight: FontWeight.w900,
+                          fontWeight: FontWeight.w500,
                           fontSize: 16.0,
                         ),
                       ),
@@ -113,9 +118,9 @@ class ServiceSection extends StatelessWidget {
                 height: 20,
               ),
               Text(
-                "What I Do?",
-                style: GoogleFonts.josefinSans(
-                  fontWeight: FontWeight.w900,
+                "What Can I Do?",
+                style: GoogleFonts.montserrat(
+                  fontWeight: FontWeight.w500,
                   height: 1.3,
                   fontSize: 35.0,
                   color: ref.watch(themeProvider).isDarkMode
@@ -128,7 +133,7 @@ class ServiceSection extends StatelessWidget {
               ),
               Text(
                 "I may not be perfect, but I'm surely of some help",
-                style: GoogleFonts.josefinSans(
+                style: GoogleFonts.montserrat(
                   color: Colors.grey[400],
                   fontSize: 14.0,
                 ),
@@ -176,7 +181,7 @@ class ServiceSection extends StatelessWidget {
                                 Text(
                                   e.title,
                                   textAlign: TextAlign.center,
-                                  style: GoogleFonts.josefinSans(
+                                  style: GoogleFonts.montserrat(
                                     color: ref.watch(themeProvider).isDarkMode
                                         ? Colors.grey[400]
                                         : Colors.grey[800],
@@ -191,7 +196,7 @@ class ServiceSection extends StatelessWidget {
               const SizedBox(
                 height: 80.0,
               ),
-              Container(
+              /*   Container(
                 alignment: Alignment.center,
                 child: LayoutBuilder(
                   builder: (context, constraints) {
@@ -228,7 +233,7 @@ class ServiceSection extends StatelessWidget {
                                   ),
                                   Text(
                                     designProcesses[index].title,
-                                    style: GoogleFonts.josefinSans(
+                                    style: GoogleFonts.montserrat(
                                       fontSize: 20.0,
                                       fontWeight: FontWeight.w700,
                                       color: ref.watch(themeProvider).isDarkMode
@@ -246,7 +251,7 @@ class ServiceSection extends StatelessWidget {
                     );
                   },
                 ),
-              )
+              )*/
             ],
           );
         },

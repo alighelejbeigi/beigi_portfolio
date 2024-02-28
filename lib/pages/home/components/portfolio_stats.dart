@@ -10,9 +10,9 @@ import '../../../utils/screen_helper.dart';
 
 final List<Stat> stats = [
   // Stat(count: "43", text: "Clients"),
-  Stat(count: "5+", text: "Projects"),
-  Stat(count: "4", text: "Awards"),
-  Stat(count: "1", text: "Years\nExperience"),
+  Stat(count: "3+", text: "Projects"),
+  Stat(count: "5+", text: "Years IT\nExperience"),
+  Stat(count: "1", text: "Years Flutter\nExperience"),
 ];
 
 class PortfolioStats extends StatelessWidget {
@@ -55,7 +55,7 @@ class PortfolioStats extends StatelessWidget {
                           children: [
                             Text(
                               stat.count,
-                              style: GoogleFonts.josefinSans(
+                              style: GoogleFonts.montserrat(
                                 fontWeight: FontWeight.w700,
                                 fontSize: 32.0,
                                 color: ref.watch(themeProvider).isDarkMode

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
 import '../../../models/header_item.dart';
@@ -26,12 +25,19 @@ class HeaderLogo extends StatelessWidget {
             onTap: () {
               Navigator.pushNamed(context, Routes.initial);
             },
-            child: RichText(
+            child: SizedBox(
+              width: 80,
+              height: 80,
+              child: Image.asset(
+                AppConstants.logo,
+                package: 'beigi_portfolio',
+              ),
+            ) /*RichText(
               text: TextSpan(
                 children: [
                   TextSpan(
-                    text: "A GH ",
-                    style: GoogleFonts.josefinSans(
+                    text: "A",
+                    style: GoogleFonts.montserrat(
                       fontSize: 26.0,
                       fontWeight: FontWeight.bold,
                       letterSpacing: 1.5,
@@ -41,8 +47,8 @@ class HeaderLogo extends StatelessWidget {
                     ),
                   ),
                   TextSpan(
-                    text: "Dev & Sof",
-                    style: GoogleFonts.josefinSans(
+                    text: "Beigi",
+                    style: GoogleFonts.montserrat(
                       color: kPrimaryColor,
                       fontSize: 26.0,
                       fontWeight: FontWeight.bold,
@@ -51,7 +57,8 @@ class HeaderLogo extends StatelessWidget {
                   )
                 ],
               ),
-            ),
+            )*/
+            ,
           ),
         ),
       );

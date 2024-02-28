@@ -26,9 +26,9 @@ List<CarouselItemModel> carouselItems(double carouselContainerHeight) =>
                       children: [
                         Text(
                           "Mobile and Web Application Developer",
-                          style: GoogleFonts.josefinSans(
+                          style: GoogleFonts.montserrat(
                             color: kPrimaryColor,
-                            fontWeight: FontWeight.w900,
+                            fontWeight: FontWeight.w500,
                             fontSize: 18.0,
                             letterSpacing: 2,
                           ),
@@ -38,9 +38,9 @@ List<CarouselItemModel> carouselItems(double carouselContainerHeight) =>
                         ),
                         Text(
                           "Ali Ghelej Beigi".toUpperCase(),
-                          style: GoogleFonts.josefinSans(
+                          style: GoogleFonts.montserrat(
                             fontSize: 40.0,
-                            fontWeight: FontWeight.w900,
+                            fontWeight: FontWeight.w500,
                             height: 1.3,
                             letterSpacing: 2.3,
                             color: ref.watch(themeProvider).isDarkMode
@@ -120,9 +120,9 @@ List<CarouselItemModel> carouselItems(double carouselContainerHeight) =>
               Consumer(
                 builder: (context, ref, _) {
                   return SizedBox(
-                    height: carouselContainerHeight - 70,
+                    height: carouselContainerHeight - 150,
                     child: Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
+                      mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.end,
                       children: ref.watch(themeProvider).isDarkMode
                           ? AppConstants.socialLoginData

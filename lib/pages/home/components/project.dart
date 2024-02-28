@@ -91,9 +91,9 @@ class ProjectSection extends StatelessWidget {
                         children: [
                           Text(
                             projectModel.project,
-                            style: GoogleFonts.josefinSans(
+                            style: GoogleFonts.montserrat(
                               color: kPrimaryColor,
-                              fontWeight: FontWeight.w900,
+                              fontWeight: FontWeight.w500,
                               fontSize: 16.0,
                             ),
                           ),
@@ -102,8 +102,8 @@ class ProjectSection extends StatelessWidget {
                           ),
                           Text(
                             projectModel.title,
-                            style: GoogleFonts.josefinSans(
-                              fontWeight: FontWeight.w900,
+                            style: GoogleFonts.montserrat(
+                              fontWeight: FontWeight.w500,
                               height: 1.3,
                               fontSize: 28.0,
                               color: ref.watch(themeProvider).isDarkMode
@@ -129,8 +129,8 @@ class ProjectSection extends StatelessWidget {
                               ? Container()
                               : Text(
                                   "Technologies Used",
-                                  style: GoogleFonts.josefinSans(
-                                    fontWeight: FontWeight.w900,
+                                  style: GoogleFonts.montserrat(
+                                    fontWeight: FontWeight.w500,
                                     fontSize: 16.0,
                                     color: ref.watch(themeProvider).isDarkMode
                                         ? Colors.white

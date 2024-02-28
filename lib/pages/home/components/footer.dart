@@ -105,7 +105,7 @@ Widget _buildUi(double width, BuildContext context) {
                                           ),
                                           Text(
                                             footerItem.title,
-                                            style: GoogleFonts.josefinSans(
+                                            style: GoogleFonts.montserrat(
                                               fontSize: 18.0,
                                               fontWeight: FontWeight.w700,
                                               color: ref
