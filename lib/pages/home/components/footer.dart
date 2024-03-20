@@ -13,34 +13,34 @@ final List<FooterItem> footerItems = [
   FooterItem(
       iconData: Icons.location_on,
       title: "ADDRESS",
-      text1: "Mumbai, Maharashtra",
-      text2: "India",
+      text1: "Shiraz, Fars",
+      text2: "Iran",
       onTap: () {
-        Utilty.openMyLocation();
+        Utilities.openMyLocation();
       }),
   FooterItem(
       iconData: Icons.phone,
       title: "PHONE",
-      text1: "+91 9167877725",
+      text1: "+98 9354492839",
       text2: "",
       onTap: () {
-        Utilty.openMyPhoneNo();
+        Utilities.openMyPhoneNo();
       }),
   FooterItem(
       iconData: Icons.mail,
       title: "EMAIL",
-      text1: "agnelselvan007@gmail.com",
+      text1: "ghelejbeigiali@gmail.com",
       text2: "",
       onTap: () {
-        Utilty.openMail();
+        Utilities.openMail();
       }),
   FooterItem(
       iconData: Icons.sms,
       title: "WHATSAPP",
-      text1: "+91 9167877725",
+      text1: "+98 9354492839",
       text2: "",
       onTap: () {
-        Utilty.openWhatsapp();
+        Utilities.openWhatsapp();
       })
 ];
 
@@ -57,15 +57,13 @@ class Footer extends StatelessWidget {
   }
 }
 
-Widget _buildUi(double width, BuildContext context) {
-  return Center(
-    child: ResponsiveWrapper(
-      maxWidth: width,
-      minWidth: width,
-      defaultScale: false,
-      child: LayoutBuilder(
-        builder: (context, constraints) {
-          return Column(
+Widget _buildUi(double width, BuildContext context) => Center(
+      child: ResponsiveWrapper(
+        maxWidth: width,
+        minWidth: width,
+        defaultScale: false,
+        child: LayoutBuilder(
+          builder: (context, constraints) => Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
@@ -88,12 +86,12 @@ Widget _buildUi(double width, BuildContext context) {
                                     Widget? child) {
                                   return Column(
                                     crossAxisAlignment:
-                                        CrossAxisAlignment.start,
+                                        CrossAxisAlignment.center,
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
                                       Row(
                                         mainAxisAlignment:
-                                            MainAxisAlignment.start,
+                                            MainAxisAlignment.center,
                                         children: [
                                           Icon(
                                             footerItem.iconData,
@@ -113,7 +111,7 @@ Widget _buildUi(double width, BuildContext context) {
                                                       .isDarkMode
                                                   ? Colors.white
                                                   : MyThemes
-                                                      .scaffoldBackgroundColor,
+                                                      .darkScaffoldBackgroundColor,
                                             ),
                                           ),
                                         ],
@@ -171,9 +169,7 @@ Widget _buildUi(double width, BuildContext context) {
                 ],
               )
             ],
-          );
-        },
+          ),
+        ),
       ),
-    ),
-  );
-}
+    );

@@ -8,7 +8,7 @@ class ProjectModel {
   final String title;
   final String description;
   final String appPhotos;
-  final String projectLink;
+  final Uri projectLink;
   final List<TechnologyModel> techUsed;
   List<LinkModel>? links = [];
   final String? buttonText;
@@ -27,88 +27,98 @@ class ProjectModel {
   static List<ProjectModel> projects = [
     ProjectModel(
       project: "Flutter App",
-      title: "Smart Store App",
+      title: "Flower shop App",
       description:
-          "The Idea came during the pandemics to solve the issue of social distancing in supermarkets.",
+          "This is a sample project with used Json server for training and have two rol manager and customers",
       appPhotos: AppConstants.smartStoreImage,
-      projectLink: "https://github.com/AgnelSelvan/Smart-Store-Mobile-App",
+      projectLink: Uri.https(
+        'www.github.com',
+        'alibeigi95/flower_app',
+      ),
       techUsed: [
         TechnologyConstants.flutter,
-        TechnologyConstants.firebase,
-        TechnologyConstants.flask,
-        TechnologyConstants.python,
-        TechnologyConstants.razorPay
+        TechnologyConstants.figma,
+        TechnologyConstants.restApi,
+        TechnologyConstants.git,
       ],
       buttonText: "Github Link",
     ),
     ProjectModel(
-      project: "Swift App",
-      title: "Cross The Road Game",
-      description: "Cross the Road game developed using Swift and SceneKit",
+      project: "Flutter App",
+      title: "Todo App With Hive And Bloc",
+      description:
+          "Implementation Todo list for used local database and Bloc state management for learning",
       appPhotos: AppConstants.crossTheRoadImage,
-      projectLink: "https://github.com/AgnelSelvan/Cross-the-road",
+      projectLink: Uri.https(
+        'www.github.com',
+        'alibeigi95/todo_app_with_hive_and_bloc',
+      ),
       techUsed: [
-        TechnologyConstants.swift,
-        TechnologyConstants.sceneKit,
+        TechnologyConstants.flutter,
+        TechnologyConstants.git,
       ],
       buttonText: "Github Link",
     ),
     ProjectModel(
       project: "Flutter App",
-      title: "News Up App",
-      description:
-          "This application is used basically for viewing different news. Launched the app in Amazon AppStore",
+      title: "Crypto Price(Coming soon)",
+      description: "I want build Crypto price tracker with push notification",
       appPhotos: AppConstants.newsUpImage,
-      projectLink: "https://www.amazon.com/gp/product/B08669JDX7",
+      projectLink: Uri.https(
+        'www.github.com',
+        'alibeigi95',
+      ),
       techUsed: [
         TechnologyConstants.flutter,
+        TechnologyConstants.figma,
+        TechnologyConstants.restApi,
+        TechnologyConstants.git,
       ],
     ),
     ProjectModel(
       project: "Flutter App",
-      title: "Music Lab",
-      description:
-          "A Simple Music Player App. Launched the app in Amazon AppStore",
+      title: "AI Chat Bot(Coming soon)",
+      description: "A Simple AI chat with gemini",
       appPhotos: AppConstants.musicLabImage,
-      projectLink: "https://www.amazon.com/gp/product/B08WL2XFGW",
+      projectLink: Uri.https(
+        'www.github.com',
+        'alibeigi95',
+      ),
       techUsed: [
         TechnologyConstants.flutter,
+        TechnologyConstants.git,
+        TechnologyConstants.restApi,
       ],
     ),
-    ProjectModel(
-      project: "PHP Website",
-      title: "Computer Store",
-      description:
-          "This is a complete online e-commerce website of selling computer and seperate admin panel is built for handling the order request and only payement is added.",
-      appPhotos: AppConstants.computerStoreImage,
-      projectLink: "https://github.com/AgnelSelvan/computer-store.git",
-      techUsed: [
-        TechnologyConstants.php,
-        TechnologyConstants.razorPay,
-      ],
-    ),
-    ProjectModel(
-      project: "Python",
-      title: "Personal Face and Emotion Recognition",
-      description:
-          "The model will recognize each face and identify their name based on the trained model. CNN is used for training the dataset.",
-      appPhotos: AppConstants.personalFaceImage,
-      projectLink: "https://github.com/AgnelSelvan/Emotion-Recognition.git",
-      techUsed: [
-        TechnologyConstants.python,
-      ],
-    ),
-  ];
-
-  static List<ProjectModel> demos = [
     ProjectModel(
       project: "Flutter App",
-      title: "Flutter Web Portfolio",
-      description: "",
-      appPhotos: '',
-      projectLink: "https://github.com/AgnelSelvan/Flutter-Web-Portfolio",
-      techUsed: [],
-      buttonText: "Github Link",
+      title: "Math Solver AI With Image",
+      description:
+          "Math Solver AI with image and gemini google for making easy to get answer the hard math problem ",
+      appPhotos: AppConstants.computerStoreImage,
+      projectLink: Uri.https(
+        'www.github.com',
+        'alibeigi95',
+      ),
+      techUsed: [
+        TechnologyConstants.flutter,
+        TechnologyConstants.git,
+        TechnologyConstants.restApi,
+      ],
+    ),
+    ProjectModel(
+      project: "Dart App",
+      title: "Bus Ticket Reservation",
+      description:
+          "Implementation OPP for reserve Bus ticket in dart before get into the flutter.",
+      appPhotos: AppConstants.personalFaceImage,
+      projectLink: Uri.https(
+        'www.github.com',
+        'alibeigi95/bus_app_oop_2',
+      ),
+      techUsed: [
+        TechnologyConstants.git,
+      ],
     ),
   ];
 }

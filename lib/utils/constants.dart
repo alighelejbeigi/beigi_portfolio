@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../models/header_item.dart';
 import 'utils.dart';
 
-const Color kPrimaryColor = Color(0xFFFFD800);
+const Color kPrimaryColor = Color(0xFF20b2aa);
 const Color kBackgroundColor = Color.fromRGBO(7, 17, 26, 1);
 const Color kDangerColor = Color.fromARGB(255, 243, 22, 22);
 const Color kCaptionColor = Color.fromRGBO(166, 177, 187, 1);
@@ -16,10 +16,25 @@ double getMobileMaxWidth(BuildContext context) =>
     MediaQuery.of(context).size.width * .8;
 
 class AppConstants {
-  static const linkedInUrl = "https://www.linkedin.com/in/ali-ghelej-beigi/";
-  static const instagramUrl = "https://www.instagram.com/_agnel.selvan_/";
-  static const githubUrl = "https://github.com/AgnelSelvan";
-  static const mediumUrl = "https://medium.com/@agnelselvan";
+  static Uri linkedInUrl = Uri.https(
+    'www.linkedin.com',
+    'in/ali-ghelej-beigi/',
+  );
+  static Uri instagramUrl = Uri.https(
+    'www.instagram.com',
+    'ali_beigi_95/',
+  );
+  static Uri githubUrl = Uri.https(
+    'github.com',
+    'alibeigi95/',
+  );
+  static Uri mediumUrl = Uri.https(
+    'medium.com',
+  );
+
+/*  static const instagramUrl = "www.instagram.com/_agnel.selvan_/";
+  static const githubUrl = "github.com/AgnelSelvan";
+  static const mediumUrl = "medium.com/@agnelselvan";*/
 
   static const _assets = "assets/";
 
@@ -75,22 +90,22 @@ class AppConstants {
     NameOnTap(
         title: emailImage,
         onTap: () {
-          Utilty.openMail();
+          Utilities.openMail();
         }),
     NameOnTap(
         title: linkedInImage,
         onTap: () {
-          Utilty.openUrl(linkedInUrl);
+          Utilities.openUrl(linkedInUrl);
         }),
     NameOnTap(
         title: instagramImage,
         onTap: () {
-          Utilty.openUrl(instagramUrl);
+          Utilities.openUrl(instagramUrl);
         }),
     NameOnTap(
         title: githubImage,
         onTap: () {
-          Utilty.openUrl(githubUrl);
+          Utilities.openUrl(githubUrl);
         }),
   ];
 
@@ -98,22 +113,22 @@ class AppConstants {
     NameOnTap(
         title: emailImageDark,
         onTap: () {
-          Utilty.openMail();
+          Utilities.openMail();
         }),
     NameOnTap(
         title: linkedInImageDark,
         onTap: () {
-          Utilty.openUrl(linkedInUrl);
+          Utilities.openUrl(linkedInUrl);
         }),
     NameOnTap(
         title: instagramImageDark,
         onTap: () {
-          Utilty.openUrl(instagramUrl);
+          Utilities.openUrl(instagramUrl);
         }),
     NameOnTap(
         title: githubImageDark,
         onTap: () {
-          Utilty.openUrl(githubUrl);
+          Utilities.openUrl(githubUrl);
         }),
   ];
 }

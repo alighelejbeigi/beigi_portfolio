@@ -1,16 +1,23 @@
 import 'package:url_launcher/url_launcher.dart';
 
-class Utilty {
-  static Future<void> openUrl(String url) async {
-    if (await canLaunch(url)) {
-      await launch(url);
+class Utilities {
+  static Future<void> openUrl(Uri url) async {
+    if (await canLaunchUrl(url)) {
+      await launchUrl(url);
     }
   }
 
-  static Future<void> openMail() => openUrl("mailto:agnelselvan007@gmail.com");
+  static Future<void> openMail() =>
+      openUrl(Uri.https('mailto:ghelejbeigiali@gmail.com'));
 
   static Future<void> openMyLocation() =>
-      openUrl("https://goo.gl/maps/YDFt3w2xWAu3nwD17");
-  static Future<void> openMyPhoneNo() => openUrl("tel:+91-9167877725");
-  static Future<void> openWhatsapp() => openUrl("https://wa.me/9167877725");
+      openUrl(Uri.https('goo.gl', '/maps/YDFt3w2xWAu3nwD17'));
+
+/*  static Future<void> openMyPhoneNo() =>
+      openUrl(Uri.https("tel:+98-9354492839"));*/
+
+  static Future<void> openMyPhoneNo() => launch("tel:+98-9354492839");
+
+  static Future<void> openWhatsapp() =>
+      openUrl(Uri.https("wa.me", "/9354492839"));
 }

@@ -99,7 +99,7 @@ class HeaderRow extends StatelessWidget {
         NameOnTap(
           title: "Blogs",
           onTap: () {
-            Utilty.openUrl(AppConstants.mediumUrl);
+            Utilities.openUrl(AppConstants.mediumUrl);
           },
           iconData: Icons.article,
         ),
@@ -192,8 +192,8 @@ class _HeaderState extends ConsumerState<Header>
       child: Container(
         decoration: BoxDecoration(
             color: ref.watch(themeProvider).isDarkMode
-                ? MyThemes.scaffoldBackgroundColor
-                : Colors.white),
+                ? MyThemes.darkScaffoldBackgroundColor
+                : MyThemes.lightScaffoldBackgroundColor),
         /* color: Theme.of(context).scaffoldBackgroundColor.withOpacity(0.95),*/
         padding: const EdgeInsets.symmetric(horizontal: 16.0),
         child: Row(
@@ -220,8 +220,8 @@ class _HeaderState extends ConsumerState<Header>
     return Container(
       decoration: BoxDecoration(
           color: ref.watch(themeProvider).isDarkMode
-              ? MyThemes.scaffoldBackgroundColor
-              : Colors.white),
+              ? MyThemes.darkScaffoldBackgroundColor
+              : MyThemes.lightScaffoldBackgroundColor),
       /* color: Theme.of(context).scaffoldBackgroundColor.withOpacity(0.95),*/
       child: Container(
         padding: EdgeInsets.symmetric(

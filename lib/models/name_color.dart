@@ -5,6 +5,9 @@ class NameIconColor {
   final IconData iconData;
   final Color color;
 
-  NameIconColor(
-      {required this.title, required this.iconData, required this.color});
+  NameIconColor({
+    required this.title,
+    required this.iconData,
+    required this.color,
+  });
 }

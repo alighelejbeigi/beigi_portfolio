@@ -58,7 +58,7 @@ class ProjectSection extends StatelessWidget {
                 decoration: BoxDecoration(
                     color: ref.watch(themeProvider).isDarkMode
                         ? const Color.fromARGB(75, 12, 12, 7)
-                        : Colors.grey[100],
+                        : Colors.white,
                     borderRadius: BorderRadius.circular(5)),
                 child: Flex(
                   direction: ScreenHelper.isMobile(context)
@@ -107,8 +107,8 @@ class ProjectSection extends StatelessWidget {
                               height: 1.3,
                               fontSize: 28.0,
                               color: ref.watch(themeProvider).isDarkMode
-                                  ? Colors.white
-                                  : MyThemes.scaffoldBackgroundColor,
+                                  ? MyThemes.lightScaffoldBackgroundColor
+                                  : MyThemes.darkScaffoldBackgroundColor,
                             ),
                           ),
                           const SizedBox(
@@ -133,8 +133,8 @@ class ProjectSection extends StatelessWidget {
                                     fontWeight: FontWeight.w500,
                                     fontSize: 16.0,
                                     color: ref.watch(themeProvider).isDarkMode
-                                        ? Colors.white
-                                        : MyThemes.scaffoldBackgroundColor,
+                                        ? MyThemes.lightScaffoldBackgroundColor
+                                        : MyThemes.darkScaffoldBackgroundColor,
                                   ),
                                 ),
                           Wrap(
@@ -172,7 +172,8 @@ class ProjectSection extends StatelessWidget {
                                   ),
                                   child: TextButton(
                                     onPressed: () {
-                                      Utilty.openUrl(projectModel.projectLink);
+                                      Utilities.openUrl(
+                                          projectModel.projectLink);
                                     },
                                     child: Center(
                                       child: Text(

@@ -5,7 +5,6 @@ import '../models/header_item.dart';
 import '../utils/constants.dart';
 import '../utils/utils.dart';
 
-
 final homeProvider = ChangeNotifierProvider((ref) => HomeProvider());
 
 class HomeProvider extends ChangeNotifier {
@@ -62,7 +61,7 @@ class HomeProvider extends ChangeNotifier {
     } else if (nameOnTap.title == "About") {
       scrollToAbout();
     } else if (nameOnTap.title == "Blog") {
-      Utilty.openUrl(AppConstants.mediumUrl);
+      Utilities.openUrl(AppConstants.mediumUrl);
     }
   }
 }

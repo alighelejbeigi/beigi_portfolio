@@ -34,113 +34,112 @@ class _HomeState extends ConsumerState<Home>
     super.initState();
   }
 
-  Widget _buildPage() {
-    return Stack(
-      children: [
-        ScrollConfiguration(
-          behavior: ScrollConfiguration.of(context).copyWith(scrollbars: false),
-          child: SingleChildScrollView(
-            physics: const AlwaysScrollableScrollPhysics(),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                SizedBox(
-                  height: ScreenHelper.isDesktop(context) ? 30 : 20,
-                ),
-                Carousel(
-                  key: _homeProvider.homeKey,
-                ),
-                const SizedBox(
-                  height: 20.0,
-                ),
-                AboutSection(
-                  key: _homeProvider.aboutKey,
-                ),
-                ServiceSection(
-                  key: _homeProvider.servicesKey,
-                ),
-                SizedBox(
-                  key: _homeProvider.portfolioKey,
-                  height: 100.0,
-                ),
-                Center(
-                    child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Text(
-                      "Portfolio",
-                      style: GoogleFonts.josefinSans(
-                        fontWeight: FontWeight.w900,
-                        fontSize: 36,
-                        color: ref.watch(themeProvider).isDarkMode
-                            ? Colors.white
-                            : MyThemes.scaffoldBackgroundColor,
+  Widget _buildPage() => Stack(
+        children: [
+          ScrollConfiguration(
+            behavior:
+                ScrollConfiguration.of(context).copyWith(scrollbars: false),
+            child: SingleChildScrollView(
+              physics: const AlwaysScrollableScrollPhysics(),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  SizedBox(
+                    height: ScreenHelper.isDesktop(context) ? 30 : 20,
+                  ),
+                  Carousel(
+                    key: _homeProvider.homeKey,
+                  ),
+                  const SizedBox(
+                    height: 20.0,
+                  ),
+                  AboutSection(
+                    key: _homeProvider.aboutKey,
+                  ),
+                  ServiceSection(
+                    key: _homeProvider.servicesKey,
+                  ),
+                  SizedBox(
+                    key: _homeProvider.portfolioKey,
+                    height: 100.0,
+                  ),
+                  Center(
+                      child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Text(
+                        "Portfolio",
+                        style: GoogleFonts.josefinSans(
+                          fontWeight: FontWeight.w900,
+                          fontSize: 36,
+                          color: ref.watch(themeProvider).isDarkMode
+                              ? MyThemes.lightScaffoldBackgroundColor
+                              : MyThemes.darkScaffoldBackgroundColor,
+                        ),
                       ),
-                    ),
-                    const SizedBox(
-                      height: 5,
-                    ),
-                    Text(
-                      "Here are some of my Previous Work :)",
-                      style: GoogleFonts.josefinSans(
-                        color: Colors.grey[400],
-                        fontSize: 14,
+                      const SizedBox(
+                        height: 5,
                       ),
-                    ),
-                    const SizedBox(
-                      height: 15,
-                    )
-                  ],
-                )),
-                ProjectSection(
-                  projects: ProjectModel.projects,
-                ),
-                const Padding(
-                  padding: EdgeInsets.symmetric(vertical: 28.0),
-                  child: PortfolioStats(),
-                ),
-                const SizedBox(
-                  height: 50.0,
-                ),
-                Footer(
-                  key: _homeProvider.contactKey,
-                )
-              ],
+                      Text(
+                        "Here are some of my Previous Work :)",
+                        style: GoogleFonts.josefinSans(
+                          color: Colors.grey[400],
+                          fontSize: 14,
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 15,
+                      )
+                    ],
+                  )),
+                  ProjectSection(
+                    projects: ProjectModel.projects,
+                  ),
+                  const Padding(
+                    padding: EdgeInsets.symmetric(vertical: 28.0),
+                    child: PortfolioStats(),
+                  ),
+                  const SizedBox(
+                    height: 50.0,
+                  ),
+                  Footer(
+                    key: _homeProvider.contactKey,
+                  )
+                ],
+              ),
             ),
           ),
-        ),
-        Header(
-          themeSwitch: ThemeSwitcher(
-              clipper: const ThemeSwitcherBoxClipper(),
-              builder: (context) {
-                return CustomSwitch(
-                  value: ref.watch(themeProvider).isDarkMode,
-                  onChanged: (val) {
-                    ref.read(themeProvider).changeTheme(val);
-                    ThemeSwitcher.of(context).changeTheme(
-                        theme: ref.read(themeProvider).getCurrentTheme,
-                        isReversed: false // default: false
-                        );
-                  },
-                );
-              }),
-        ),
-      ],
-    );
-  }
+          Header(
+            themeSwitch: ThemeSwitcher(
+                clipper: const ThemeSwitcherBoxClipper(),
+                builder: (context) {
+                  return CustomSwitch(
+                    value: ref.watch(themeProvider).isDarkMode,
+                    onChanged: (val) {
+                      ref.read(themeProvider).changeTheme(val);
+                      ThemeSwitcher.of(context).changeTheme(
+                          theme: ref.read(themeProvider).getCurrentTheme,
+                          isReversed: false // default: false
+                          );
+                    },
+                  );
+                }),
+          ),
+        ],
+      );
 
   @override
   Widget build(BuildContext context) => ThemeSwitchingArea(
         child: Scaffold(
           backgroundColor: ref.watch(themeProvider).isDarkMode
-              ? MyThemes.scaffoldBackgroundColor
-              : Colors.white,
+              ? MyThemes.darkScaffoldBackgroundColor
+              : MyThemes.lightScaffoldBackgroundColor,
           key: Globals.scaffoldKey,
           endDrawer: Drawer(
             backgroundColor: ref.watch(themeProvider).isDarkMode
-                ? MyThemes.scaffoldBackgroundColor
-                : Colors.white,
+                ? MyThemes.darkScaffoldBackgroundColor
+                : MyThemes.lightScaffoldBackgroundColor,
             child: SafeArea(
               child: Padding(
                 padding: const EdgeInsets.symmetric(
@@ -163,15 +162,15 @@ class _HomeState extends ConsumerState<Home>
                       leading: Icon(
                         HeaderRow.headerItems[index].iconData,
                         color: ref.watch(themeProvider).isDarkMode
-                            ? Colors.white
-                            : MyThemes.scaffoldBackgroundColor,
+                            ? MyThemes.lightScaffoldBackgroundColor
+                            : MyThemes.darkScaffoldBackgroundColor,
                       ),
                       title: Text(
                         HeaderRow.headerItems[index].title,
                         style: TextStyle(
                           color: ref.watch(themeProvider).isDarkMode
-                              ? Colors.white
-                              : MyThemes.scaffoldBackgroundColor,
+                              ? MyThemes.lightScaffoldBackgroundColor
+                              : MyThemes.darkScaffoldBackgroundColor,
                         ),
                       ),
                       trailing: HeaderRow.headerItems[index].isDarkTheme != null

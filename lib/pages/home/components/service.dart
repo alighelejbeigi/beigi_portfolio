@@ -91,14 +91,14 @@ class ServiceSection extends StatelessWidget {
                       letterSpacing: 2,
                       fontSize: 18.0,
                       color: ref.watch(themeProvider).isDarkMode
-                          ? Colors.white
-                          : MyThemes.scaffoldBackgroundColor,
+                          ? MyThemes.lightScaffoldBackgroundColor
+                          : MyThemes.darkScaffoldBackgroundColor,
                     ),
                   ),
                   GestureDetector(
                     onTap: () {
-                      Utilty.openUrl(
-                          "https://github.com/AgnelSelvan/AgnelSelvan.github.io/raw/main/assets/files/Agnel-Selvan.pdf");
+                      Utilities.openUrl(Uri.https("github.com",
+                          "/AgnelSelvan/AgnelSelvan.github.io/raw/main/assets/files/Agnel-Selvan.pdf"));
                     },
                     child: MouseRegion(
                       cursor: SystemMouseCursors.click,
@@ -124,8 +124,8 @@ class ServiceSection extends StatelessWidget {
                   height: 1.3,
                   fontSize: 35.0,
                   color: ref.watch(themeProvider).isDarkMode
-                      ? Colors.white
-                      : MyThemes.scaffoldBackgroundColor,
+                      ? MyThemes.lightScaffoldBackgroundColor
+                      : MyThemes.darkScaffoldBackgroundColor,
                 ),
               ),
               const SizedBox(

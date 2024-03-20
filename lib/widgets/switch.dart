@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import '../utils/constants.dart';
 
-
 class CustomSwitch extends StatefulWidget {
   final bool value;
   final ValueChanged<bool> onChanged;
@@ -11,10 +10,10 @@ class CustomSwitch extends StatefulWidget {
       : super(key: key);
 
   @override
-  _CustomSwitchState createState() => _CustomSwitchState();
+  CustomSwitchState createState() => CustomSwitchState();
 }
 
-class _CustomSwitchState extends State<CustomSwitch>
+class CustomSwitchState extends State<CustomSwitch>
     with SingleTickerProviderStateMixin {
   late Animation _circleAnimation;
   late AnimationController _animationController;

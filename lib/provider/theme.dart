@@ -22,12 +22,13 @@ class CustomThemeProvider extends ChangeNotifier {
 }
 
 class MyThemes {
-  static Color scaffoldBackgroundColor = const Color.fromRGBO(7, 17, 26, 1);
+  static Color darkScaffoldBackgroundColor = const Color.fromRGBO(7, 17, 26, 1);
+  static Color lightScaffoldBackgroundColor = Colors.grey.shade100;
 
   static final lightTheme = ThemeData(
-    scaffoldBackgroundColor: Colors.white,
+    scaffoldBackgroundColor: MyThemes.lightScaffoldBackgroundColor,
     colorScheme: const ColorScheme.light(),
-    primaryColor: const Color(0xFFFFD800),
+    primaryColor: const Color(0xFF008b8b),
     iconTheme: const IconThemeData(color: kPrimaryColor),
     primarySwatch: Colors.yellow,
     textButtonTheme: TextButtonThemeData(
@@ -38,10 +39,11 @@ class MyThemes {
       scaffoldBackgroundColor: const Color.fromRGBO(7, 17, 26, 1),
       colorScheme: const ColorScheme.dark(),
       primarySwatch: Colors.yellow,
-      primaryColor: const Color(0xFFFFD800),
+      primaryColor: const Color(0xFF008b8b),
       iconTheme: IconThemeData(color: Colors.grey[400]),
       textButtonTheme: TextButtonThemeData(
           style: ButtonStyle(
-        foregroundColor: MaterialStateProperty.all(Colors.white),
+        foregroundColor:
+            MaterialStateProperty.all(MyThemes.lightScaffoldBackgroundColor),
       )));
 }

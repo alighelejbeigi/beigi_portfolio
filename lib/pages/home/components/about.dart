@@ -56,8 +56,8 @@ class _AboutSectionState extends State<AboutSection> {
                                   height: 1.3,
                                   fontSize: 35.0,
                                   color: ref.watch(themeProvider).isDarkMode
-                                      ? Colors.white
-                                      : MyThemes.scaffoldBackgroundColor,
+                                      ? MyThemes.lightScaffoldBackgroundColor
+                                      : MyThemes.darkScaffoldBackgroundColor,
                                 ),
                               ),
                               const SizedBox(height: 25.0),
@@ -68,8 +68,8 @@ class _AboutSectionState extends State<AboutSection> {
                                   height: 1.3,
                                   fontSize: 24.0,
                                   color: ref.watch(themeProvider).isDarkMode
-                                      ? Colors.white
-                                      : MyThemes.scaffoldBackgroundColor,
+                                      ? MyThemes.lightScaffoldBackgroundColor
+                                      : MyThemes.darkScaffoldBackgroundColor,
                                 ),
                               ),
                               const SizedBox(height: 10.0),
@@ -88,8 +88,8 @@ class _AboutSectionState extends State<AboutSection> {
                                   fontSize: 14,
                                   fontWeight: FontWeight.bold,
                                   color: ref.watch(themeProvider).isDarkMode
-                                      ? Colors.white
-                                      : MyThemes.scaffoldBackgroundColor,
+                                      ? MyThemes.lightScaffoldBackgroundColor
+                                      : MyThemes.darkScaffoldBackgroundColor,
                                 ),
                               ),
                               const SizedBox(height: 10.0),
@@ -161,7 +161,7 @@ class _AboutSectionState extends State<AboutSection> {
                                                                       .isDarkMode
                                                                   ? Colors.white
                                                                   : MyThemes
-                                                                      .scaffoldBackgroundColor,
+                                                                      .darkScaffoldBackgroundColor,
                                                             ),
                                                           ),
                                                         ],

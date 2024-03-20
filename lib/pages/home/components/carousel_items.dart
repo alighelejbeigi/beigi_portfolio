@@ -44,8 +44,8 @@ List<CarouselItemModel> carouselItems(double carouselContainerHeight) =>
                             height: 1.3,
                             letterSpacing: 2.3,
                             color: ref.watch(themeProvider).isDarkMode
-                                ? Colors.white
-                                : MyThemes.scaffoldBackgroundColor,
+                                ? MyThemes.lightScaffoldBackgroundColor
+                                : MyThemes.darkScaffoldBackgroundColor,
                           ),
                         ),
                         const SizedBox(
@@ -86,7 +86,8 @@ List<CarouselItemModel> carouselItems(double carouselContainerHeight) =>
                           height: 25.0,
                         ),
                         InkWell(
-                          onTap: () => Utilty.openUrl(AppConstants.linkedInUrl),
+                          onTap: () =>
+                              Utilities.openUrl(AppConstants.linkedInUrl),
                           child: Container(
                             decoration: BoxDecoration(
                               color: kPrimaryColor,

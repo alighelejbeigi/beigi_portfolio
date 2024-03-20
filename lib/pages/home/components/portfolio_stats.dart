@@ -59,8 +59,8 @@ class PortfolioStats extends StatelessWidget {
                                 fontWeight: FontWeight.w700,
                                 fontSize: 32.0,
                                 color: ref.watch(themeProvider).isDarkMode
-                                    ? Colors.white
-                                    : MyThemes.scaffoldBackgroundColor,
+                                    ? MyThemes.lightScaffoldBackgroundColor
+                                    : MyThemes.darkScaffoldBackgroundColor,
                               ),
                             ),
                             const SizedBox(
