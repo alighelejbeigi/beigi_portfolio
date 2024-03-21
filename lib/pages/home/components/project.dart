@@ -16,195 +16,207 @@ class ProjectSection extends StatelessWidget {
   const ProjectSection({Key? key, required this.projects}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return ScreenHelper(
-      desktop: _buildUi(kDesktopMaxWidth, context),
-      tablet: _buildUi(kTabletMaxWidth, context),
-      mobile: _buildUi(getMobileMaxWidth(context), context),
-    );
-  }
+  Widget build(BuildContext context) => ScreenHelper(
+        desktop: _buildUi(kDesktopMaxWidth, context),
+        tablet: _buildUi(kTabletMaxWidth, context),
+        mobile: _buildUi(getMobileMaxWidth(context), context),
+      );
 
-  Widget _buildUi(double width, BuildContext context) {
-    return ScrollConfiguration(
-      behavior: ScrollConfiguration.of(context).copyWith(dragDevices: {
-        PointerDeviceKind.touch,
-        PointerDeviceKind.mouse,
-      }),
-      child: SingleChildScrollView(
-        scrollDirection: Axis.horizontal,
-        child: Row(
-          children: projects
-              .map((e) => Container(
-                  margin: const EdgeInsets.symmetric(
-                    horizontal: 20,
-                    vertical: 15,
+  Widget _buildUi(double width, BuildContext context) => ScrollConfiguration(
+        behavior: ScrollConfiguration.of(context).copyWith(dragDevices: {
+          PointerDeviceKind.touch,
+          PointerDeviceKind.mouse,
+        }),
+        child: SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
+          child: Row(
+            children: projects
+                .map(
+                  (e) => Container(
+                    margin: const EdgeInsets.symmetric(
+                      horizontal: 20,
+                      vertical: 15,
+                    ),
+                    child: _buildProject(width, e),
                   ),
-                  child: _buildProject(width, e)))
-              .toList(),
+                )
+                .toList(),
+          ),
         ),
-      ),
-    );
-  }
+      );
 
-  Center _buildProject(double width, ProjectModel projectModel) {
-    return Center(
-      child: LayoutBuilder(
-        builder: (context, constraints) {
-          return SizedBox(
+  Widget _buildProject(
+    double width,
+    ProjectModel projectModel,
+  ) =>
+      Center(
+        child: LayoutBuilder(
+          builder: (context, constraints) => SizedBox(
             width: width,
-            child: Consumer(builder: (context, ref, _) {
-              return Container(
+            height: ScreenHelper.isMobile(context) ? 700 : 400,
+            child: Consumer(
+              builder: (context, ref, _) => Container(
                 padding: const EdgeInsets.all(20),
-                decoration: BoxDecoration(
-                    color: ref.watch(themeProvider).isDarkMode
-                        ? const Color.fromARGB(75, 12, 12, 7)
-                        : Colors.white,
-                    borderRadius: BorderRadius.circular(5)),
+                decoration: _projectDecoration(ref),
                 child: Flex(
                   direction: ScreenHelper.isMobile(context)
                       ? Axis.vertical
                       : Axis.horizontal,
                   children: [
-                    SizedBox(
-                      width: ScreenHelper.isMobile(context)
-                          ? width * 0.9
-                          : width * 0.46,
-                      child: Image.asset(
-                        projectModel.appPhotos,
-                        width: constraints.maxWidth > 720.0 ? null : 350.0,
-                        height: 250,
-                        package: 'beigi_portfolio',
-                      ),
+                    _imageProject(
+                      context,
+                      width,
+                      projectModel,
+                      constraints,
                     ),
-
                     const SizedBox(
                       width: 20,
                       height: 20,
                     ),
-                    SizedBox(
-                      width: ScreenHelper.isMobile(context)
-                          ? width * 0.9
-                          : width * 0.45,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            projectModel.project,
-                            style: GoogleFonts.montserrat(
-                              color: kPrimaryColor,
-                              fontWeight: FontWeight.w500,
-                              fontSize: 16.0,
-                            ),
-                          ),
-                          const SizedBox(
-                            height: 15.0,
-                          ),
-                          Text(
-                            projectModel.title,
-                            style: GoogleFonts.montserrat(
-                              fontWeight: FontWeight.w500,
-                              height: 1.3,
-                              fontSize: 28.0,
-                              color: ref.watch(themeProvider).isDarkMode
-                                  ? MyThemes.lightScaffoldBackgroundColor
-                                  : MyThemes.darkScaffoldBackgroundColor,
-                            ),
-                          ),
-                          const SizedBox(
-                            height: 10.0,
-                          ),
-                          Text(
-                            projectModel.description,
-                            style: const TextStyle(
-                              color: kCaptionColor,
-                              height: 1.5,
-                              fontSize: 15.0,
-                            ),
-                          ),
-                          const SizedBox(
-                            height: 20.0,
-                          ),
-                          projectModel.techUsed.isEmpty
-                              ? Container()
-                              : Text(
-                                  "Technologies Used",
-                                  style: GoogleFonts.montserrat(
-                                    fontWeight: FontWeight.w500,
-                                    fontSize: 16.0,
-                                    color: ref.watch(themeProvider).isDarkMode
-                                        ? MyThemes.lightScaffoldBackgroundColor
-                                        : MyThemes.darkScaffoldBackgroundColor,
-                                  ),
-                                ),
-                          Wrap(
-                            children: projectModel.techUsed
-                                .map((e) => Container(
-                                      margin: const EdgeInsets.all(10),
-                                      width: 25,
-                                      color:
-                                          e.logo == AppConstants.razorPayImage
-                                              ? Colors.white
-                                              : null,
-                                      height: 25,
-                                      child: Image.asset(
-                                        e.logo,
-                                        package: 'beigi_portfolio',
-                                      ),
-                                    ))
-                                .toList(),
-                          ),
-                          const SizedBox(
-                            height: 25.0,
-                          ),
-                          Row(
-                            children: [
-                              MouseRegion(
-                                cursor: SystemMouseCursors.click,
-                                child: Container(
-                                  decoration: BoxDecoration(
-                                    color: kPrimaryColor,
-                                    borderRadius: BorderRadius.circular(8.0),
-                                  ),
-                                  height: 48.0,
-                                  padding: const EdgeInsets.symmetric(
-                                    horizontal: 28.0,
-                                  ),
-                                  child: TextButton(
-                                    onPressed: () {
-                                      Utilities.openUrl(
-                                          projectModel.projectLink);
-                                    },
-                                    child: Center(
-                                      child: Text(
-                                        (projectModel.buttonText ??
-                                                "Explore MORE")
-                                            .toUpperCase(),
-                                        style: const TextStyle(
-                                          fontSize: 13.0,
-                                          fontWeight: FontWeight.bold,
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ],
-                          )
-                        ],
-                      ),
-                    )
-                    // Expanded(
-                    //   flex: constraints.maxWidth > 720.0 ? 1 : 0,
-                    //   child: ,
-                    // )
+                    _detailProjectItem(context, width, projectModel, ref)
                   ],
                 ),
-              );
-            }),
-          );
-        },
-      ),
-    );
-  }
+              ),
+            ),
+          ),
+        ),
+      );
+
+  Widget _detailProjectItem(
+    BuildContext context,
+    double width,
+    ProjectModel projectModel,
+    WidgetRef ref,
+  ) =>
+      SizedBox(
+        width: ScreenHelper.isMobile(context) ? width * 0.9 : width * 0.45,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            _projectType(projectModel),
+            const SizedBox(height: 15.0),
+            _projectTitle(projectModel, ref),
+            const SizedBox(height: 10.0),
+            _projectDescription(projectModel),
+            const SizedBox(height: 20.0),
+            _technologyUsedTitle(projectModel, ref),
+            _technologyUsedList(projectModel),
+            const SizedBox(height: 25.0),
+            _projectButton(projectModel)
+          ],
+        ),
+      );
+
+  Widget _projectButton(ProjectModel projectModel) => Row(
+        children: [
+          MouseRegion(
+            cursor: SystemMouseCursors.click,
+            child: Container(
+              decoration: _buttonDecoration(),
+              height: 48.0,
+              padding: const EdgeInsets.symmetric(
+                horizontal: 28.0,
+              ),
+              child: TextButton(
+                onPressed: () {
+                  Utilities.openUrl(projectModel.projectLink);
+                },
+                child: Center(
+                  child: Text(
+                    (projectModel.buttonText ?? "Explore MORE").toUpperCase(),
+                    style: const TextStyle(
+                      fontSize: 13.0,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ],
+      );
+
+  BoxDecoration _buttonDecoration() => BoxDecoration(
+        color: kPrimaryColor,
+        borderRadius: BorderRadius.circular(8.0),
+      );
+
+  Widget _technologyUsedList(ProjectModel projectModel) => Wrap(
+        children: projectModel.techUsed
+            .map(
+              (e) => Container(
+                margin: const EdgeInsets.all(10),
+                width: 25,
+                height: 25,
+                child: Image.asset(
+                  e.logo,
+                  package: 'beigi_portfolio',
+                ),
+              ),
+            )
+            .toList(),
+      );
+
+  Widget _technologyUsedTitle(ProjectModel projectModel, WidgetRef ref) =>
+      projectModel.techUsed.isEmpty
+          ? const SizedBox.shrink()
+          : Text(
+              "Technologies Used",
+              style: GoogleFonts.montserrat(
+                fontWeight: FontWeight.w500,
+                fontSize: 16.0,
+                color: ref.watch(themeProvider).isDarkMode
+                    ? MyThemes.lightScaffoldBackgroundColor
+                    : MyThemes.darkScaffoldBackgroundColor,
+              ),
+            );
+
+  Widget _projectTitle(ProjectModel projectModel, WidgetRef ref) => Text(
+        projectModel.title,
+        style: GoogleFonts.montserrat(
+          fontWeight: FontWeight.w500,
+          height: 1.3,
+          fontSize: 28.0,
+          color: ref.watch(themeProvider).isDarkMode
+              ? MyThemes.lightScaffoldBackgroundColor
+              : MyThemes.darkScaffoldBackgroundColor,
+        ),
+      );
+
+  Widget _projectDescription(ProjectModel projectModel) => Text(
+        projectModel.description,
+        style: const TextStyle(
+          color: kCaptionColor,
+          height: 1.5,
+          fontSize: 15.0,
+        ),
+      );
+
+  Widget _projectType(ProjectModel projectModel) => Text(
+        projectModel.project,
+        style: GoogleFonts.montserrat(
+          color: kPrimaryColor,
+          fontWeight: FontWeight.w500,
+          fontSize: 16.0,
+        ),
+      );
+
+  Widget _imageProject(BuildContext context, double width,
+          ProjectModel projectModel, BoxConstraints constraints) =>
+      SizedBox(
+        width: ScreenHelper.isMobile(context) ? width * 0.9 : width * 0.46,
+        child: Image.asset(
+          projectModel.appPhotos,
+          width: constraints.maxWidth > 720.0 ? null : 350.0,
+          height: 250,
+          package: 'beigi_portfolio',
+        ),
+      );
+
+  BoxDecoration _projectDecoration(WidgetRef ref) => BoxDecoration(
+      color: ref.watch(themeProvider).isDarkMode
+          ? const Color.fromARGB(75, 12, 12, 7)
+          : Colors.white,
+      borderRadius: BorderRadius.circular(5));
 }

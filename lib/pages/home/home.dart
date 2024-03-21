@@ -63,36 +63,7 @@ class _HomeState extends ConsumerState<Home>
                     key: _homeProvider.portfolioKey,
                     height: 100.0,
                   ),
-                  Center(
-                      child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Text(
-                        "Portfolio",
-                        style: GoogleFonts.josefinSans(
-                          fontWeight: FontWeight.w900,
-                          fontSize: 36,
-                          color: ref.watch(themeProvider).isDarkMode
-                              ? MyThemes.lightScaffoldBackgroundColor
-                              : MyThemes.darkScaffoldBackgroundColor,
-                        ),
-                      ),
-                      const SizedBox(
-                        height: 5,
-                      ),
-                      Text(
-                        "Here are some of my Previous Work :)",
-                        style: GoogleFonts.josefinSans(
-                          color: Colors.grey[400],
-                          fontSize: 14,
-                        ),
-                      ),
-                      const SizedBox(
-                        height: 15,
-                      )
-                    ],
-                  )),
+                  _portfolioSection(),
                   ProjectSection(
                     projects: ProjectModel.projects,
                   ),
@@ -110,101 +81,123 @@ class _HomeState extends ConsumerState<Home>
               ),
             ),
           ),
-          Header(
-            themeSwitch: ThemeSwitcher(
-                clipper: const ThemeSwitcherBoxClipper(),
-                builder: (context) {
-                  return CustomSwitch(
-                    value: ref.watch(themeProvider).isDarkMode,
-                    onChanged: (val) {
-                      ref.read(themeProvider).changeTheme(val);
-                      ThemeSwitcher.of(context).changeTheme(
-                          theme: ref.read(themeProvider).getCurrentTheme,
-                          isReversed: false // default: false
-                          );
-                    },
-                  );
-                }),
-          ),
+          _header(),
         ],
+      );
+
+  Widget _header() => Header(
+        themeSwitch: ThemeSwitcher(
+          clipper: const ThemeSwitcherBoxClipper(),
+          builder: (context) => CustomSwitch(
+            value: ref.watch(themeProvider).isDarkMode,
+            onChanged: (val) {
+              ref.read(themeProvider).changeTheme(val);
+              ThemeSwitcher.of(context).changeTheme(
+                theme: ref.read(themeProvider).getCurrentTheme,
+              );
+            },
+          ),
+        ),
+      );
+
+  Widget _portfolioSection() => Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            _portfolioSectionTitle(),
+            const SizedBox(height: 5),
+            _portfolioSectionDescription(),
+            const SizedBox(height: 15)
+          ],
+        ),
+      );
+
+  Widget _portfolioSectionDescription() => Text(
+        "Here are some of my Previous Work :)",
+        style: GoogleFonts.josefinSans(
+          color: Colors.grey[400],
+          fontSize: 14,
+        ),
+      );
+
+  Widget _portfolioSectionTitle() => Text(
+        "Portfolio",
+        style: GoogleFonts.josefinSans(
+          fontWeight: FontWeight.w900,
+          fontSize: 36,
+          color: _backgroundColor(),
+        ),
       );
 
   @override
   Widget build(BuildContext context) => ThemeSwitchingArea(
         child: Scaffold(
-          backgroundColor: ref.watch(themeProvider).isDarkMode
-              ? MyThemes.darkScaffoldBackgroundColor
-              : MyThemes.lightScaffoldBackgroundColor,
+          backgroundColor: _backgroundColor(),
           key: Globals.scaffoldKey,
           endDrawer: Drawer(
-            backgroundColor: ref.watch(themeProvider).isDarkMode
-                ? MyThemes.darkScaffoldBackgroundColor
-                : MyThemes.lightScaffoldBackgroundColor,
+            backgroundColor: _backgroundColor(),
             child: SafeArea(
               child: Padding(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 16.0,
-                  vertical: 24.0,
-                ),
-                child: ListView.separated(
-                  itemBuilder: (BuildContext context, int index) {
-                    return ListTile(
-                      onTap: () {
-                        if (Globals.scaffoldKey.currentState != null) {
-                          if (Globals
-                              .scaffoldKey.currentState!.isEndDrawerOpen) {
-                            Navigator.pop(context);
-                            _homeProvider.scrollBasedOnHeader(
-                                HeaderRow.headerItems[index]);
-                          }
-                        }
-                      },
-                      leading: Icon(
-                        HeaderRow.headerItems[index].iconData,
-                        color: ref.watch(themeProvider).isDarkMode
-                            ? MyThemes.lightScaffoldBackgroundColor
-                            : MyThemes.darkScaffoldBackgroundColor,
-                      ),
-                      title: Text(
-                        HeaderRow.headerItems[index].title,
-                        style: TextStyle(
-                          color: ref.watch(themeProvider).isDarkMode
-                              ? MyThemes.lightScaffoldBackgroundColor
-                              : MyThemes.darkScaffoldBackgroundColor,
-                        ),
-                      ),
-                      trailing: HeaderRow.headerItems[index].isDarkTheme != null
-                          ? HeaderRow.headerItems[index].isDarkTheme!
-                              ? SizedBox(
-                                  width: 50,
-                                  child: CustomSwitch(
-                                    value: ref.watch(themeProvider).isDarkMode,
-                                    onChanged: (val) {
-                                      ref.read(themeProvider).changeTheme(val);
-                                      ThemeSwitcher.of(context).changeTheme(
-                                          theme: ref
-                                              .read(themeProvider)
-                                              .getCurrentTheme,
-                                          isReversed: false // default: false
-                                          );
-                                    },
-                                  ),
-                                )
-                              : null
-                          : null,
-                    );
-                  },
-                  separatorBuilder: (BuildContext context, int index) {
-                    return const SizedBox(
-                      height: 10.0,
-                    );
-                  },
-                  itemCount: HeaderRow.headerItems.length,
-                ),
+                padding: _paddingThemeSwitchArea(),
+                child: _drawerList(),
               ),
             ),
           ),
           body: _buildPage(),
         ),
       );
+
+  Widget _drawerList() => ListView.separated(
+        itemBuilder: (BuildContext context, int index) => ListTile(
+          onTap: () {
+            _onTapDrawer(context, index);
+          },
+          leading: Icon(HeaderRow.headerItems[index].iconData,
+              color: _backgroundColor()),
+          title: Text(
+            HeaderRow.headerItems[index].title,
+            style: TextStyle(color: _backgroundColor()),
+          ),
+          trailing: HeaderRow.headerItems[index].isDarkTheme != null
+              ? HeaderRow.headerItems[index].isDarkTheme!
+                  ? _switchTheme(context)
+                  : null
+              : null,
+        ),
+        separatorBuilder: (BuildContext context, int index) =>
+            const SizedBox(height: 10.0),
+        itemCount: HeaderRow.headerItems.length,
+      );
+
+  Widget _switchTheme(BuildContext context) => SizedBox(
+        width: 50,
+        child: CustomSwitch(
+          value: ref.watch(themeProvider).isDarkMode,
+          onChanged: (val) {
+            ref.read(themeProvider).changeTheme(val);
+            ThemeSwitcher.of(context).changeTheme(
+              theme: ref.read(themeProvider).getCurrentTheme,
+            );
+          },
+        ),
+      );
+
+  void _onTapDrawer(BuildContext context, int index) {
+    if (Globals.scaffoldKey.currentState != null) {
+      if (Globals.scaffoldKey.currentState!.isEndDrawerOpen) {
+        Navigator.pop(context);
+        _homeProvider.scrollBasedOnHeader(HeaderRow.headerItems[index]);
+      }
+    }
+  }
+
+  EdgeInsets _paddingThemeSwitchArea() => const EdgeInsets.symmetric(
+        horizontal: 16.0,
+        vertical: 24.0,
+      );
+
+  Color _backgroundColor() => ref.watch(themeProvider).isDarkMode
+      ? MyThemes.darkScaffoldBackgroundColor
+      : MyThemes.lightScaffoldBackgroundColor;
 }

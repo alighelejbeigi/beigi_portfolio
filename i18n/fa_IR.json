@@ -1,0 +1,10 @@
+{
+  "login": {
+    "email": "ایمیل",
+    "passWord": "پسورد",
+    "remember_me": "مرا به خاطر بسپار",
+    "login_button": "ورود",
+    "sign_up_button": "رجیستر",
+    "title": "صفحه ورود"
+  }
+}

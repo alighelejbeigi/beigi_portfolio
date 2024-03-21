@@ -15,7 +15,6 @@ class Utilities {
 
 /*  static Future<void> openMyPhoneNo() =>
       openUrl(Uri.https("tel:+98-9354492839"));*/
-
   static Future<void> openMyPhoneNo() => launch("tel:+98-9354492839");
 
   static Future<void> openWhatsapp() =>

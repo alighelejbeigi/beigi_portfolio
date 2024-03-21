@@ -35,40 +35,20 @@ class CustomSwitchState extends State<CustomSwitch>
   @override
   void dispose() {
     _animationController.dispose();
-
     super.dispose();
   }
 
   @override
-  Widget build(BuildContext context) {
-    return AnimatedBuilder(
-      animation: _animationController,
-      builder: (context, child) {
-        return GestureDetector(
-          onTap: () {
-            if (_animationController.isCompleted) {
-              _animationController.reverse();
-            } else {
-              _animationController.forward();
-            }
-            debugPrint(
-                "_animationController: ${_animationController.isCompleted}");
-            widget.value == false
-                ? widget.onChanged(true)
-                : widget.onChanged(false);
-          },
+  Widget build(BuildContext context) => AnimatedBuilder(
+        animation: _animationController,
+        builder: (context, child) => GestureDetector(
+          onTap: _onTapSwitch,
           child: Container(
             width: 50.0,
             height: 28.0,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(24.0),
-              color: _circleAnimation.value == Alignment.centerRight
-                  ? Colors.grey[100]
-                  : Colors.black,
-            ),
+            decoration: _decoration(),
             child: Padding(
-              padding: const EdgeInsets.only(
-                  top: 2.0, bottom: 2.0, right: 2.0, left: 2.0),
+              padding: const EdgeInsets.all(2),
               child: Container(
                 alignment:
                     widget.value ? Alignment.centerRight : Alignment.centerLeft,
@@ -88,8 +68,25 @@ class CustomSwitchState extends State<CustomSwitch>
               ),
             ),
           ),
-        );
-      },
+        ),
+      );
+
+  BoxDecoration _decoration() {
+    return BoxDecoration(
+      borderRadius: BorderRadius.circular(24.0),
+      color: _circleAnimation.value == Alignment.centerRight
+          ? Colors.white
+          : Colors.black,
     );
+  }
+
+  void _onTapSwitch() {
+    if (_animationController.isCompleted) {
+      _animationController.reverse();
+    } else {
+      _animationController.forward();
+    }
+    debugPrint("_animationController: ${_animationController.isCompleted}");
+    widget.value == false ? widget.onChanged(true) : widget.onChanged(false);
   }
 }

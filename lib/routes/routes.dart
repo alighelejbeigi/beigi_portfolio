@@ -6,7 +6,6 @@ import '../utils/constants.dart';
 
 class Routes {
   static const String initial = "/";
-  static const String demos = "/demos";
 }
 
 class RouterGenerator {

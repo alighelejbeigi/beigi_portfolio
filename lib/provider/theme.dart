@@ -30,20 +30,22 @@ class MyThemes {
     colorScheme: const ColorScheme.light(),
     primaryColor: const Color(0xFF008b8b),
     iconTheme: const IconThemeData(color: kPrimaryColor),
-    primarySwatch: Colors.yellow,
     textButtonTheme: TextButtonThemeData(
-        style: ButtonStyle(
-            foregroundColor: MaterialStateProperty.all(kBackgroundColor))),
+      style: ButtonStyle(
+        foregroundColor: MaterialStateProperty.all(kBackgroundColor),
+      ),
+    ),
   );
   static final darkTheme = ThemeData(
-      scaffoldBackgroundColor: const Color.fromRGBO(7, 17, 26, 1),
-      colorScheme: const ColorScheme.dark(),
-      primarySwatch: Colors.yellow,
-      primaryColor: const Color(0xFF008b8b),
-      iconTheme: IconThemeData(color: Colors.grey[400]),
-      textButtonTheme: TextButtonThemeData(
-          style: ButtonStyle(
+    scaffoldBackgroundColor: const Color.fromRGBO(7, 17, 26, 1),
+    colorScheme: const ColorScheme.dark(),
+    primaryColor: const Color(0xFF008b8b),
+    iconTheme: IconThemeData(color: Colors.grey[400]),
+    textButtonTheme: TextButtonThemeData(
+      style: ButtonStyle(
         foregroundColor:
             MaterialStateProperty.all(MyThemes.lightScaffoldBackgroundColor),
-      )));
+      ),
+    ),
+  );
 }

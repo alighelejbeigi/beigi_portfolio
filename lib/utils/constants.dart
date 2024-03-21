@@ -8,7 +8,6 @@ const Color kBackgroundColor = Color.fromRGBO(7, 17, 26, 1);
 const Color kDangerColor = Color.fromARGB(255, 243, 22, 22);
 const Color kCaptionColor = Color.fromRGBO(166, 177, 187, 1);
 
-// Lets replace all static sizes
 const double kDesktopMaxWidth = 1000.0;
 const double kTabletMaxWidth = 760.0;
 
@@ -31,10 +30,6 @@ class AppConstants {
   static Uri mediumUrl = Uri.https(
     'medium.com',
   );
-
-/*  static const instagramUrl = "www.instagram.com/_agnel.selvan_/";
-  static const githubUrl = "github.com/AgnelSelvan";
-  static const mediumUrl = "medium.com/@agnelselvan";*/
 
   static const _assets = "assets/";
 
@@ -85,6 +80,7 @@ class AppConstants {
   static const musicLabImage = "${_projectsImages}4.jpeg";
   static const personalFaceImage = "${_projectsImages}5.jpeg";
   static const computerStoreImage = "${_projectsImages}6.jpeg";
+  static const newAppComingSoonImage = "${_projectsImages}7.jpg";
 
   static List<NameOnTap> socialLoginData = [
     NameOnTap(

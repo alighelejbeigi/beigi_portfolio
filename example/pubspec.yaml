@@ -30,6 +30,14 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  get: ^4.6.5
+  animated_theme_switcher: ^2.0.6
+  carousel_slider: ^4.0.0
+  flutter_riverpod: ^1.0.3
+  flutter_svg: ^1.0.3
+  google_fonts: ^4.0.1
+  responsive_framework: ^0.1.7
+  url_launcher: ^6.0.20
 
   beigi_portfolio:
     path: ../

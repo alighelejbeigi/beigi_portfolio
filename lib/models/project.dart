@@ -63,7 +63,7 @@ class ProjectModel {
       project: "Flutter App",
       title: "Crypto Price(Coming soon)",
       description: "I want build Crypto price tracker with push notification",
-      appPhotos: AppConstants.newsUpImage,
+      appPhotos: AppConstants.newAppComingSoonImage,
       projectLink: Uri.https(
         'www.github.com',
         'alibeigi95',
@@ -79,7 +79,7 @@ class ProjectModel {
       project: "Flutter App",
       title: "AI Chat Bot(Coming soon)",
       description: "A Simple AI chat with gemini",
-      appPhotos: AppConstants.musicLabImage,
+      appPhotos: AppConstants.newAppComingSoonImage,
       projectLink: Uri.https(
         'www.github.com',
         'alibeigi95',
@@ -92,10 +92,10 @@ class ProjectModel {
     ),
     ProjectModel(
       project: "Flutter App",
-      title: "Math Solver AI With Image",
+      title: "Math Solver AI With Image(Coming Soon)",
       description:
           "Math Solver AI with image and gemini google for making easy to get answer the hard math problem ",
-      appPhotos: AppConstants.computerStoreImage,
+      appPhotos: AppConstants.newAppComingSoonImage,
       projectLink: Uri.https(
         'www.github.com',
         'alibeigi95',
