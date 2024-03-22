@@ -11,7 +11,7 @@ class Utilities {
       openUrl(Uri.https('mailto:ghelejbeigiali@gmail.com'));
 
   static Future<void> openMyLocation() =>
-      openUrl(Uri.https('goo.gl', '/maps/YDFt3w2xWAu3nwD17'));
+      openUrl(Uri.https('maps.app.goo.gl', '/GgCJKmjexDHLrpBf6'));
 
 /*  static Future<void> openMyPhoneNo() =>
       openUrl(Uri.https("tel:+98-9354492839"));*/
