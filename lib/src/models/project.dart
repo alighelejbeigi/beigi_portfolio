@@ -1,3 +1,4 @@
+import '../../generated/locales.g.dart';
 import '../utils/constants.dart';
 import 'link.dart';
 import 'technology.dart';
@@ -10,7 +11,7 @@ class ProjectModel {
   final Uri projectLink;
   final List<TechnologyModel> techUsed;
   List<LinkModel>? links = [];
-  final String? buttonText;
+  final String buttonText;
 
   ProjectModel({
     required this.project,
@@ -19,17 +20,16 @@ class ProjectModel {
     required this.appPhotos,
     required this.projectLink,
     required this.techUsed,
-    this.buttonText,
+    required this.buttonText,
     this.links,
   });
 
   static List<ProjectModel> projects = [
     ProjectModel(
-      project: "Flutter App",
-      title: "Flower shop App",
-      description:
-          "This is a sample project with used Json server for training and have two rol manager and customers",
-      appPhotos: AppConstants.smartStoreImage,
+      project: LocaleKeys.project_type_flutter,
+      title: LocaleKeys.project_title_flower,
+      description: LocaleKeys.project_description_flower,
+      appPhotos: AppConstants.flutterLogoImage,
       projectLink: Uri.https(
         'www.github.com',
         'alibeigi95/flower_app',
@@ -40,14 +40,13 @@ class ProjectModel {
         TechnologyConstants.restApi,
         TechnologyConstants.git,
       ],
-      buttonText: "Github Link",
+      buttonText: LocaleKeys.project_github_link_button,
     ),
     ProjectModel(
-      project: "Flutter App",
-      title: "Todo App With Hive And Bloc",
-      description:
-          "Implementation Todo list for used local database and Bloc state management for learning",
-      appPhotos: AppConstants.crossTheRoadImage,
+      project: LocaleKeys.project_type_flutter,
+      title: LocaleKeys.project_title_todo,
+      description: LocaleKeys.project_description_todo,
+      appPhotos: AppConstants.flutterLogoImage,
       projectLink: Uri.https(
         'www.github.com',
         'alibeigi95/todo_app_with_hive_and_bloc',
@@ -56,12 +55,12 @@ class ProjectModel {
         TechnologyConstants.flutter,
         TechnologyConstants.git,
       ],
-      buttonText: "Github Link",
+      buttonText: LocaleKeys.project_github_link_button,
     ),
     ProjectModel(
-      project: "Flutter App",
-      title: "Crypto Price(Coming soon)",
-      description: "I want build Crypto price tracker with push notification",
+      project: LocaleKeys.project_type_flutter,
+      title: LocaleKeys.project_title_crypto,
+      description: LocaleKeys.project_description_crypto,
       appPhotos: AppConstants.newAppComingSoonImage,
       projectLink: Uri.https(
         'www.github.com',
@@ -73,11 +72,12 @@ class ProjectModel {
         TechnologyConstants.restApi,
         TechnologyConstants.git,
       ],
+      buttonText: LocaleKeys.project_explore_more_button,
     ),
     ProjectModel(
-      project: "Flutter App",
-      title: "AI Chat Bot(Coming soon)",
-      description: "A Simple AI chat with gemini",
+      project: LocaleKeys.project_type_flutter,
+      title: LocaleKeys.project_title_ai,
+      description: LocaleKeys.project_description_ai,
       appPhotos: AppConstants.newAppComingSoonImage,
       projectLink: Uri.https(
         'www.github.com',
@@ -88,12 +88,12 @@ class ProjectModel {
         TechnologyConstants.git,
         TechnologyConstants.restApi,
       ],
+      buttonText: LocaleKeys.project_explore_more_button,
     ),
     ProjectModel(
-      project: "Flutter App",
-      title: "Math Solver AI With Image(Coming Soon)",
-      description:
-          "Math Solver AI with image and gemini google for making easy to get answer the hard math problem ",
+      project: LocaleKeys.project_type_flutter,
+      title: LocaleKeys.project_title_math_solver,
+      description: LocaleKeys.project_description_math_solver,
       appPhotos: AppConstants.newAppComingSoonImage,
       projectLink: Uri.https(
         'www.github.com',
@@ -104,13 +104,13 @@ class ProjectModel {
         TechnologyConstants.git,
         TechnologyConstants.restApi,
       ],
+      buttonText: LocaleKeys.project_explore_more_button,
     ),
     ProjectModel(
-      project: "Dart App",
-      title: "Bus Ticket Reservation",
-      description:
-          "Implementation OPP for reserve Bus ticket in dart before get into the flutter.",
-      appPhotos: AppConstants.personalFaceImage,
+      project: LocaleKeys.project_type_dart,
+      title: LocaleKeys.project_title_bus,
+      description: LocaleKeys.project_description_bus,
+      appPhotos: AppConstants.dartLogoImage,
       projectLink: Uri.https(
         'www.github.com',
         'alibeigi95/bus_app_oop_2',
@@ -118,6 +118,7 @@ class ProjectModel {
       techUsed: [
         TechnologyConstants.git,
       ],
+      buttonText: LocaleKeys.project_github_link_button,
     ),
   ];
 }

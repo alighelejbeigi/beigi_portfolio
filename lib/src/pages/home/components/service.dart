@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
+import '../../../../generated/locales.g.dart';
 import '../../../models/name_color.dart';
 import '../../../provider/theme.dart';
 import '../../../utils/constants.dart';
@@ -132,7 +134,7 @@ class ServiceSection extends StatelessWidget {
       );
 
   Widget _description() => Text(
-        "I may not be perfect, but I'm surely of some help",
+        LocaleKeys.service_description.tr,
         style: GoogleFonts.montserrat(
           color: Colors.grey[400],
           fontSize: 14.0,
@@ -140,7 +142,7 @@ class ServiceSection extends StatelessWidget {
       );
 
   Widget _title(WidgetRef ref) => Text(
-        "What Can I Do?",
+        LocaleKeys.service_title.tr,
         style: GoogleFonts.montserrat(
           fontWeight: FontWeight.w500,
           height: 1.3,
@@ -151,15 +153,18 @@ class ServiceSection extends StatelessWidget {
         ),
       );
 
-  GestureDetector _downloadCvButton() => GestureDetector(
+  Widget _downloadCvButton() => GestureDetector(
         onTap: () {
-          Utilities.openUrl(Uri.https("github.com",
-              "/AgnelSelvan/AgnelSelvan.github.io/raw/main/assets/files/Agnel-Selvan.pdf"));
+          Utilities.openUrl(
+            Uri.https("linkedin.com",
+                "/in/ali-ghelej-beigi/" /* "/AgnelSelvan/AgnelSelvan.github.io/raw/main/assets/files/Agnel-Selvan.pdf"*/
+                ),
+          );
         },
         child: MouseRegion(
           cursor: SystemMouseCursors.click,
           child: Text(
-            "DOWNLOAD CV",
+            LocaleKeys.service_CV_button.tr,
             style: GoogleFonts.montserrat(
               color: kPrimaryColor,
               fontWeight: FontWeight.w500,
@@ -170,7 +175,7 @@ class ServiceSection extends StatelessWidget {
       );
 
   Widget _experienceTitle(WidgetRef ref) => Text(
-        "Productive ,\n   Experienced",
+        LocaleKeys.service_experience_title.tr,
         style: GoogleFonts.montserrat(
           fontWeight: FontWeight.w500,
           height: 1.8,

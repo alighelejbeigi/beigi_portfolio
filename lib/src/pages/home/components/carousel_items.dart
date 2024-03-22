@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../../../../generated/locales.g.dart';
 import '../../../models/carousel_item_model.dart';
 import '../../../provider/theme.dart';
 import '../../../utils/constants.dart';
@@ -105,9 +107,9 @@ Widget _talkButton() => Material(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Text(
-                  "Let's Talk",
+                  LocaleKeys.carousel_item_button.tr,
                   style: TextStyle(
-                    color: Colors.grey[800],
+                    color: Colors.grey[100],
                     fontSize: 13.0,
                     fontWeight: FontWeight.bold,
                   ),
@@ -119,28 +121,26 @@ Widget _talkButton() => Material(
       ),
     );
 
-Widget _subjectAndLocation() => const Row(
+Widget _subjectAndLocation() => Row(
       children: [
         Text(
-          "Software Engineer, ",
-          style: TextStyle(
+          LocaleKeys.carousel_item_subject.tr,
+          style: const TextStyle(
             color: kCaptionColor,
             fontSize: 15.0,
             height: 1.0,
           ),
         ),
-        SizedBox(width: 10),
-        Icon(
+        const SizedBox(width: 10),
+        const Icon(
           Icons.location_on,
           color: kCaptionColor,
           size: 14,
         ),
-        SizedBox(
-          width: 2,
-        ),
+        const SizedBox(width: 2),
         Text(
-          "Iran , Shiraz",
-          style: TextStyle(
+          LocaleKeys.carousel_item_location.tr,
+          style: const TextStyle(
             color: kCaptionColor,
             fontSize: 15.0,
             height: 1.0,
@@ -150,7 +150,7 @@ Widget _subjectAndLocation() => const Row(
     );
 
 Widget _secondTitle(WidgetRef ref) => Text(
-      "Ali Ghelej Beigi".toUpperCase(),
+      LocaleKeys.carousel_item_second_title.tr.toUpperCase(),
       style: GoogleFonts.montserrat(
         fontSize: 40.0,
         fontWeight: FontWeight.w500,
@@ -163,7 +163,7 @@ Widget _secondTitle(WidgetRef ref) => Text(
     );
 
 Widget _firstTitle() => Text(
-      "Mobile and Web Application Developer",
+      LocaleKeys.carousel_item_first_title.tr,
       style: GoogleFonts.montserrat(
         color: kPrimaryColor,
         fontWeight: FontWeight.w500,

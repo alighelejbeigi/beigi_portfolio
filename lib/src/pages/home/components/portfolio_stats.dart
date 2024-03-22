@@ -1,17 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
+import '../../../../generated/locales.g.dart';
 import '../../../models/stat.dart';
 import '../../../provider/theme.dart';
 import '../../../utils/constants.dart';
 import '../../../utils/screen_helper.dart';
 
 final List<Stat> stats = [
-  Stat(count: "3+", text: "Projects"),
-  Stat(count: "5+", text: "Years IT\nExperience"),
-  Stat(count: "1", text: "Years Flutter\nExperience"),
+  Stat(count: "3+", text: LocaleKeys.stats_projects),
+  Stat(count: "5+", text: LocaleKeys.stats_year_experience_it),
+  Stat(count: "1", text: LocaleKeys.stats_year_experience_flutter),
 ];
 
 class PortfolioStats extends StatelessWidget {
@@ -61,7 +63,7 @@ class PortfolioStats extends StatelessWidget {
       );
 
   Widget _titleState(Stat stat) => Text(
-        stat.text,
+        stat.text.tr,
         style: const TextStyle(
           fontSize: 16.0,
           color: kCaptionColor,

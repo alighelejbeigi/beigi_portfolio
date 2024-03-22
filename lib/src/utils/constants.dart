@@ -81,6 +81,8 @@ class AppConstants {
   static const personalFaceImage = "${_projectsImages}5.jpeg";
   static const computerStoreImage = "${_projectsImages}6.jpeg";
   static const newAppComingSoonImage = "${_projectsImages}7.jpg";
+  static const flutterLogoImage = "${_projectsImages}8.png";
+  static const dartLogoImage = "${_projectsImages}9.png";
 
   static List<NameOnTap> socialLoginData = [
     NameOnTap(

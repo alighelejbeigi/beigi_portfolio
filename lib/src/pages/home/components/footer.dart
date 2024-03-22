@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
+import '../../../../generated/locales.g.dart';
 import '../../../models/footer_item.dart';
 import '../../../provider/theme.dart';
 import '../../../utils/constants.dart';
@@ -12,32 +14,32 @@ import '../../../utils/utils.dart';
 final List<FooterItem> footerItems = [
   FooterItem(
       iconData: Icons.location_on,
-      title: "ADDRESS",
-      text1: "Shiraz, Far's",
-      text2: "Iran",
+      title: LocaleKeys.footer_address,
+      text1: LocaleKeys.footer_my_address_one,
+      text2: LocaleKeys.footer_my_address_two,
       onTap: () {
         Utilities.openMyLocation();
       }),
   FooterItem(
       iconData: Icons.phone,
-      title: "PHONE",
-      text1: "+98 9354492839",
+      title: LocaleKeys.footer_phone,
+      text1: LocaleKeys.footer_my_phone_number,
       text2: "",
       onTap: () {
         Utilities.openMyPhoneNo();
       }),
   FooterItem(
       iconData: Icons.mail,
-      title: "EMAIL",
-      text1: "ghelejbeigiali@gmail.com",
+      title: LocaleKeys.footer_email,
+      text1: LocaleKeys.footer_my_email,
       text2: "",
       onTap: () {
         Utilities.openMail();
       }),
   FooterItem(
       iconData: Icons.sms,
-      title: "WHATSAPP",
-      text1: "+98 9354492839",
+      title: LocaleKeys.footer_whatsapp,
+      text1: LocaleKeys.footer_my_phone_number,
       text2: "",
       onTap: () {
         Utilities.openWhatsapp();
@@ -65,15 +67,15 @@ Widget _buildUi(double width, BuildContext context) => Center(
             children: [
               _footerList(context, constraints),
               const SizedBox(height: 20.0),
-              const Flex(
+              Flex(
                 direction: Axis.horizontal,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Padding(
-                    padding: EdgeInsets.only(bottom: 8.0),
+                    padding: const EdgeInsets.only(bottom: 8.0),
                     child: Text(
-                      "Developed in 💛 with Flutter",
-                      style: TextStyle(
+                      LocaleKeys.footer_developed.tr,
+                      style: const TextStyle(
                         color: kCaptionColor,
                       ),
                     ),
@@ -139,14 +141,14 @@ Widget _buttonDescription(FooterItem footerItem) => RichText(
       text: TextSpan(
         children: [
           TextSpan(
-            text: "${footerItem.text1}\n",
+            text: "${footerItem.text1.tr}\n",
             style: const TextStyle(
               color: kCaptionColor,
               height: 1.8,
             ),
           ),
           TextSpan(
-            text: "${footerItem.text2}\n",
+            text: "${footerItem.text2.tr}\n",
             style: const TextStyle(
               color: kCaptionColor,
             ),
@@ -170,7 +172,7 @@ Widget _iconAndTitle(
         ),
         const SizedBox(width: 15.0),
         Text(
-          footerItem.title,
+          footerItem.title.tr,
           style: GoogleFonts.montserrat(
             fontSize: 18.0,
             fontWeight: FontWeight.w700,

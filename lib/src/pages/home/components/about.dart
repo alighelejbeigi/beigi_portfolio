@@ -2,9 +2,11 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
+import '../../../../generated/locales.g.dart';
 import '../../../models/technology.dart';
 import '../../../provider/theme.dart';
 import '../../../utils/constants.dart';
@@ -151,7 +153,7 @@ class _AboutSectionState extends State<AboutSection> {
       });
 
   Widget _technologyTitle(WidgetRef ref) => Text(
-        "Technology I have worked with",
+        LocaleKeys.about_me_technology_title.tr,
         style: TextStyle(
           fontSize: 14,
           fontWeight: FontWeight.bold,
@@ -161,9 +163,9 @@ class _AboutSectionState extends State<AboutSection> {
         ),
       );
 
-  Widget _description() => const Text(
-        "I have done my Computer Science graduation at Bahonar University of Shiraz with a bachelor's degree on 2018. I have been developing Mobile Apps for more than 1 years now.I have worked as a Team and as an Indivual in various organization and we have plan to launch many apps in Playstore as well as in Appstore. In my free time I use to learn new technics. Always love to learn new technologies and to succeed in an environment of growth and excellence and earn a job which provides me job satisfaction and self-development and help me achieve personal as well as organisational goals.",
-        style: TextStyle(
+  Widget _description() => Text(
+        LocaleKeys.about_me_description.tr,
+        style: const TextStyle(
           color: kCaptionColor,
           height: 1.5,
           fontSize: 15.0,
@@ -171,7 +173,7 @@ class _AboutSectionState extends State<AboutSection> {
       );
 
   Widget _title(WidgetRef ref) => Text(
-        "I'm Ali Ghelej Beigi, A Flutter and Web Developer and Love to Create New Things",
+        LocaleKeys.about_me_title.tr,
         style: GoogleFonts.montserrat(
           fontWeight: FontWeight.bold,
           height: 1.3,
@@ -183,7 +185,7 @@ class _AboutSectionState extends State<AboutSection> {
       );
 
   Widget _aboutMe(WidgetRef ref) => Text(
-        "About Me",
+        LocaleKeys.about_me_about_me_title.tr,
         style: GoogleFonts.montserrat(
           fontWeight: FontWeight.w500,
           height: 1.3,

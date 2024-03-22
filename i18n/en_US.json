@@ -1,10 +1,69 @@
 {
-  "login": {
-    "email": "Email",
-    "passWord": "Password",
-    "remember_me": "Remember Me",
-    "login_button": "Login",
-    "sign_up_button": "Sign Up",
-    "title": "Login Page"
+  "carousel_item": {
+    "first_title": "Mobile and Web Application Developer",
+    "second_title": "Ali Ghelej Beigi",
+    "subject": "Software Engineer, ",
+    "location": "Iran , Shiraz",
+    "button": "Let's Talk"
+  },
+  "about_me": {
+    "about_me_title": "About Me",
+    "title": "I'm Ali Ghelej Beigi, A Flutter and Web Developer and Love to Create New Things",
+    "description": "I have done my Computer Science graduation at Bahonar University of Shiraz with a bachelor's degree on 2018. I have been developing Mobile Apps for more than 1 years now.I have worked as a Team and as an Indivual in various organization and we have plan to launch many apps in Playstore as well as in Appstore. In my free time I use to learn new technics. Always love to learn new technologies and to succeed in an environment of growth and excellence and earn a job which provides me job satisfaction and self-development and help me achieve personal as well as organisational goals.",
+    "technology_title": "Technology I have worked with"
+  },
+  "service": {
+    "experience_title": "Productive ,\\n   Experienced",
+    "CV_button": "DOWNLOAD CV",
+    "title": "What Can I Do?",
+    "description": "I may not be perfect, but I'm surely of some help"
+  },
+  "home": {
+    "portfolio": "Portfolio",
+    "description": "Here are some of my Previous Work :)"
+  },
+  "project": {
+    "type_flutter": "Flutter App",
+    "type_dart": "Dart App",
+    "github_link_button": "Github Link",
+    "explore_more_button": "EXPLORE MORE",
+    "title_flower": "Flower shop App",
+    "description_flower": "This is a sample project with used Json server for training and have two rol manager and customers",
+    "title_todo": "Todo App With Hive And Bloc",
+    "description_todo": "Implementation Todo list for used local database and Bloc state management for learning",
+    "title_crypto": "Crypto Price(Coming soon)",
+    "description_crypto": "I want build Crypto price tracker with push notification",
+    "title_ai": "AI Chat Bot(Coming soon)",
+    "description_ai": "A Simple AI chat with gemini",
+    "title_math_solver": "Math Solver AI With Image(Coming Soon)",
+    "description_math_solver": "Math Solver AI with image and gemini google for making easy to get answer the hard math problem ",
+    "title_bus": "Bus Ticket Reservation",
+    "description_bus": "Implementation OPP for reserve Bus ticket in dart before get into the flutter.",
+    "technology_used": "Technologies Used"
+  },
+  "stats": {
+    "projects": "Projects",
+    "year_experience_flutter": "Years Flutter\\nExperience",
+    "year_experience_it": "Years IT\\nExperience"
+  },
+  "footer": {
+    "address": "ADDRESS",
+    "phone": "PHONE",
+    "email": "EMAIL",
+    "whatsapp": "WHATSAPP",
+    "my_phone_number": "+98 9354492839",
+    "my_email": "ghelejbeigiali@gmail.com",
+    "my_address_one": "Shiraz, Fars",
+    "my_address_two": "Iran",
+    "developed": "Developed in \uD83D\uDC9B with Flutter"
+  },
+  "header": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "portfolio": "Portfolio",
+    "contact": "Contact",
+    "blog": "Blog",
+    "themes": "Themes"
   }
 }

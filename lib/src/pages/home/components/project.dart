@@ -2,8 +2,10 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../../../../generated/locales.g.dart';
 import '../../../models/project.dart';
 import '../../../provider/theme.dart';
 import '../../../utils/constants.dart';
@@ -112,22 +114,23 @@ class ProjectSection extends StatelessWidget {
         children: [
           MouseRegion(
             cursor: SystemMouseCursors.click,
-            child: Container(
-              decoration: _buttonDecoration(),
-              height: 48.0,
-              padding: const EdgeInsets.symmetric(
-                horizontal: 28.0,
-              ),
-              child: TextButton(
-                onPressed: () {
-                  Utilities.openUrl(projectModel.projectLink);
-                },
+            child: InkWell(
+              onTap: () {
+                Utilities.openUrl(projectModel.projectLink);
+              },
+              child: Container(
+                decoration: _buttonDecoration(),
+                height: 48.0,
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 28.0,
+                ),
                 child: Center(
                   child: Text(
-                    (projectModel.buttonText ?? "Explore MORE").toUpperCase(),
-                    style: const TextStyle(
+                    (projectModel.buttonText.tr).toUpperCase(),
+                    style: TextStyle(
                       fontSize: 13.0,
                       fontWeight: FontWeight.bold,
+                      color: Colors.grey[200],
                     ),
                   ),
                 ),
@@ -162,7 +165,7 @@ class ProjectSection extends StatelessWidget {
       projectModel.techUsed.isEmpty
           ? const SizedBox.shrink()
           : Text(
-              "Technologies Used",
+              LocaleKeys.project_technology_used.tr,
               style: GoogleFonts.montserrat(
                 fontWeight: FontWeight.w500,
                 fontSize: 16.0,
@@ -173,7 +176,7 @@ class ProjectSection extends StatelessWidget {
             );
 
   Widget _projectTitle(ProjectModel projectModel, WidgetRef ref) => Text(
-        projectModel.title,
+        projectModel.title.tr,
         style: GoogleFonts.montserrat(
           fontWeight: FontWeight.w500,
           height: 1.3,
@@ -185,7 +188,7 @@ class ProjectSection extends StatelessWidget {
       );
 
   Widget _projectDescription(ProjectModel projectModel) => Text(
-        projectModel.description,
+        projectModel.description.tr,
         style: const TextStyle(
           color: kCaptionColor,
           height: 1.5,
@@ -194,7 +197,7 @@ class ProjectSection extends StatelessWidget {
       );
 
   Widget _projectType(ProjectModel projectModel) => Text(
-        projectModel.project,
+        projectModel.project.tr,
         style: GoogleFonts.montserrat(
           color: kPrimaryColor,
           fontWeight: FontWeight.w500,
@@ -216,7 +219,7 @@ class ProjectSection extends StatelessWidget {
 
   BoxDecoration _projectDecoration(WidgetRef ref) => BoxDecoration(
       color: ref.watch(themeProvider).isDarkMode
-          ? const Color.fromARGB(75, 12, 12, 7)
+          ? const Color.fromARGB(75, 27, 40, 23)
           : Colors.white,
       borderRadius: BorderRadius.circular(5));
 }

@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:get/get_utils/get_utils.dart';
 import 'package:get/route_manager.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
+import '../../../../generated/locales.g.dart';
 import '../../../models/header_item.dart';
 import '../../../provider/home.dart';
 import '../../../provider/theme.dart';
@@ -127,39 +129,39 @@ class HeaderRow extends StatelessWidget {
 
   static List<NameOnTap> get headerItems => [
         NameOnTap(
-          title: "Home",
+          title: LocaleKeys.header_home.tr,
           iconData: Icons.home,
           onTap: () {},
         ),
         NameOnTap(
-          title: "About",
+          title: LocaleKeys.header_about.tr,
           onTap: () {},
           iconData: Icons.info,
         ),
         NameOnTap(
-          title: "Services",
+          title: LocaleKeys.header_services.tr,
           onTap: () {},
           iconData: Icons.school,
         ),
         NameOnTap(
-          title: "Portfolio",
+          title: LocaleKeys.header_portfolio.tr,
           onTap: () {},
           iconData: Icons.work,
         ),
         NameOnTap(
-          title: "Contact",
+          title: LocaleKeys.header_contact.tr,
           onTap: () {},
           iconData: Icons.contact_mail,
         ),
         NameOnTap(
-          title: "Blogs",
+          title: LocaleKeys.header_blog.tr,
           onTap: () {
             Utilities.openUrl(AppConstants.mediumUrl);
           },
           iconData: Icons.article,
         ),
         NameOnTap(
-          title: "Themes",
+          title: LocaleKeys.header_themes.tr,
           onTap: () {},
           iconData: Icons.light_mode_outlined,
           isDarkTheme: true,
@@ -189,7 +191,7 @@ class HeaderRow extends StatelessWidget {
         children: [
           ...headerItems
               .map(
-                (item) => item.title == "Themes"
+                (item) => item.title == LocaleKeys.header_themes.tr
                     ? const Text("")
                     : MouseRegion(
                         cursor: SystemMouseCursors.click,

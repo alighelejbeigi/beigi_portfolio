@@ -1,6 +1,8 @@
 import 'package:animated_theme_switcher/animated_theme_switcher.dart';
+import 'package:beigi_portfolio/generated/locales.g.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../../models/project.dart';
@@ -114,7 +116,7 @@ class _HomeState extends ConsumerState<Home>
       );
 
   Widget _portfolioSectionDescription() => Text(
-        "Here are some of my Previous Work :)",
+        LocaleKeys.home_description.tr,
         style: GoogleFonts.josefinSans(
           color: Colors.grey[400],
           fontSize: 14,
@@ -122,11 +124,11 @@ class _HomeState extends ConsumerState<Home>
       );
 
   Widget _portfolioSectionTitle() => Text(
-        "Portfolio",
+        LocaleKeys.home_portfolio.tr,
         style: GoogleFonts.josefinSans(
           fontWeight: FontWeight.w900,
           fontSize: 36,
-          color: _backgroundColor(),
+          color: _textAndIconColor(),
         ),
       );
 
