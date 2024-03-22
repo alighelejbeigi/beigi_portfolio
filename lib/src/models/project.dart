@@ -1,7 +1,6 @@
-import 'package:beigi_portfolio/models/technology.dart';
-
 import '../utils/constants.dart';
 import 'link.dart';
+import 'technology.dart';
 
 class ProjectModel {
   final String project;
