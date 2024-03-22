@@ -154,10 +154,10 @@ class _HomeState extends ConsumerState<Home>
             _onTapDrawer(context, index);
           },
           leading: Icon(HeaderRow.headerItems[index].iconData,
-              color: _backgroundColor()),
+              color: _textAndIconColor()),
           title: Text(
             HeaderRow.headerItems[index].title,
-            style: TextStyle(color: _backgroundColor()),
+            style: TextStyle(color: _textAndIconColor()),
           ),
           trailing: HeaderRow.headerItems[index].isDarkTheme != null
               ? HeaderRow.headerItems[index].isDarkTheme!
@@ -200,4 +200,8 @@ class _HomeState extends ConsumerState<Home>
   Color _backgroundColor() => ref.watch(themeProvider).isDarkMode
       ? MyThemes.darkScaffoldBackgroundColor
       : MyThemes.lightScaffoldBackgroundColor;
+
+  Color _textAndIconColor() => ref.watch(themeProvider).isDarkMode
+      ? MyThemes.lightScaffoldBackgroundColor
+      : MyThemes.darkScaffoldBackgroundColor;
 }
