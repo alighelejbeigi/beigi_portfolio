@@ -11,7 +11,7 @@ dependencies:
   flutter:
     sdk: flutter
   animated_theme_switcher: ^2.0.6
-  carousel_slider: ^4.0.0
+  carousel_slider: ^5.0.0
   cupertino_icons: ^1.0.2
   flutter_riverpod: ^1.0.3
   flutter_svg: ^1.0.3
