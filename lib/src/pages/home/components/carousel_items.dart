@@ -4,9 +4,9 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../../../../beigi_portfolio.dart';
 import '../../../../generated/locales.g.dart';
 import '../../../models/carousel_item_model.dart';
-import '../../../provider/theme.dart';
 import '../../../utils/constants.dart';
 import '../../../utils/utils.dart';
 
@@ -149,25 +149,34 @@ Widget _subjectAndLocation() => Row(
       ],
     );
 
-Widget _secondTitle(WidgetRef ref) => Text(
-      LocaleKeys.carousel_item_second_title.tr.toUpperCase(),
-      style: GoogleFonts.montserrat(
-        fontSize: 40.0,
-        fontWeight: FontWeight.w500,
-        height: 1.3,
-        letterSpacing: 2.3,
-        color: ref.watch(themeProvider).isDarkMode
-            ? MyThemes.lightScaffoldBackgroundColor
-            : MyThemes.darkScaffoldBackgroundColor,
-      ),
-    );
+Widget _secondTitle(WidgetRef ref) {
+  final locale = ref.watch(localeProvider);
 
-Widget _firstTitle() => Text(
-      LocaleKeys.carousel_item_first_title.tr,
-      style: GoogleFonts.montserrat(
-        color: kPrimaryColor,
-        fontWeight: FontWeight.w500,
-        fontSize: 18.0,
-        letterSpacing: 2,
-      ),
+  return Text(
+    LocaleKeys.carousel_item_second_title.tr.toUpperCase(),
+    style: GoogleFonts.montserrat(
+      fontSize: 40.0,
+      fontWeight: FontWeight.w500,
+      height: 1.3,
+      letterSpacing: locale.languageCode == 'fa' ? 0 : 2.3,
+      color: ref.watch(themeProvider).isDarkMode
+          ? MyThemes.lightScaffoldBackgroundColor
+          : MyThemes.darkScaffoldBackgroundColor,
+    ),
+  );
+}
+
+Widget _firstTitle() => Consumer(
+      builder: (context, ref, child) {
+        final locale = ref.watch(localeProvider);
+        return Text(
+          LocaleKeys.carousel_item_first_title.tr,
+          style: GoogleFonts.montserrat(
+            color: kPrimaryColor,
+            fontWeight: FontWeight.w500,
+            fontSize: 18.0,
+            letterSpacing: locale.languageCode == 'fa' ? 0 : 2,
+          ),
+        );
+      },
     );

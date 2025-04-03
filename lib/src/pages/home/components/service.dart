@@ -4,9 +4,9 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
+import '../../../../beigi_portfolio.dart';
 import '../../../../generated/locales.g.dart';
 import '../../../models/name_color.dart';
-import '../../../provider/theme.dart';
 import '../../../utils/constants.dart';
 import '../../../utils/screen_helper.dart';
 import '../../../utils/utils.dart';
@@ -174,16 +174,22 @@ class ServiceSection extends StatelessWidget {
         ),
       );
 
-  Widget _experienceTitle(WidgetRef ref) => Text(
-        LocaleKeys.service_experience_title.tr,
-        style: GoogleFonts.montserrat(
-          fontWeight: FontWeight.w500,
-          height: 1.8,
-          letterSpacing: 2,
-          fontSize: 18.0,
-          color: ref.watch(themeProvider).isDarkMode
-              ? MyThemes.lightScaffoldBackgroundColor
-              : MyThemes.darkScaffoldBackgroundColor,
-        ),
+  Widget _experienceTitle(WidgetRef ref) => Consumer(
+        builder: (context, ref, child) {
+          final locale = ref.watch(localeProvider);
+
+          return Text(
+            LocaleKeys.service_experience_title.tr,
+            style: GoogleFonts.montserrat(
+              fontWeight: FontWeight.w500,
+              height: 1.8,
+              letterSpacing: locale.languageCode == 'fa' ? 0 : 2,
+              fontSize: 18.0,
+              color: ref.watch(themeProvider).isDarkMode
+                  ? MyThemes.lightScaffoldBackgroundColor
+                  : MyThemes.darkScaffoldBackgroundColor,
+            ),
+          );
+        },
       );
 }

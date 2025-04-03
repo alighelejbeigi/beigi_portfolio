@@ -32,7 +32,7 @@ class MyThemes {
     iconTheme: const IconThemeData(color: kPrimaryColor),
     textButtonTheme: TextButtonThemeData(
       style: ButtonStyle(
-        foregroundColor: MaterialStateProperty.all(kBackgroundColor),
+        foregroundColor: WidgetStateProperty.all(kBackgroundColor),
       ),
     ),
   );
@@ -44,7 +44,7 @@ class MyThemes {
     textButtonTheme: TextButtonThemeData(
       style: ButtonStyle(
         foregroundColor:
-            MaterialStateProperty.all(MyThemes.lightScaffoldBackgroundColor),
+            WidgetStateProperty.all(MyThemes.lightScaffoldBackgroundColor),
       ),
     ),
   );

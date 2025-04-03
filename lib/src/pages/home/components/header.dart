@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:get/get_utils/get_utils.dart';
-import 'package:get/route_manager.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
 import '../../../../generated/locales.g.dart';
 import '../../../models/header_item.dart';
 import '../../../provider/home.dart';
+import '../../../provider/locale_notifier.dart';
 import '../../../provider/theme.dart';
 import '../../../utils/constants.dart';
 import '../../../utils/globals.dart';
@@ -21,23 +21,16 @@ class Header extends ConsumerStatefulWidget {
   final Widget themeSwitch;
 
   @override
-  ConsumerState<ConsumerStatefulWidget> createState() =>
-      _HeaderState(themeSwitch: themeSwitch);
+  ConsumerState<ConsumerStatefulWidget> createState() => _HeaderState();
 }
 
 class _HeaderState extends ConsumerState<Header>
     with SingleTickerProviderStateMixin {
-  _HeaderState({
-    required this.themeSwitch,
-  });
-
-  final Widget themeSwitch;
-
   @override
   Widget build(BuildContext context) => ScreenHelper(
-        desktop: buildHeader(context, themeSwitch),
+        desktop: buildHeader(context, widget.themeSwitch),
         mobile: buildMobileHeader(context),
-        tablet: buildHeader(context, themeSwitch),
+        tablet: buildHeader(context, widget.themeSwitch),
       );
 
   Widget buildMobileHeader(BuildContext context) => SafeArea(
@@ -112,20 +105,24 @@ class HeaderRow extends StatelessWidget {
   const HeaderRow({Key? key, required this.themeSwitch}) : super(key: key);
   final Widget themeSwitch;
 
-  static List<NameOnTap> get languageItems => [
-        NameOnTap(
-          title: "ENG",
-          onTap: () {
-            Get.updateLocale(const Locale('en', 'US'));
-          },
-        ),
-        NameOnTap(
-          title: "فا",
-          onTap: () {
-            Get.updateLocale(const Locale('fa', 'IR'));
-          },
-        ),
-      ];
+  static List<NameOnTap> languageOptions(WidgetRef ref) {
+    final localeNotifier = ref.read(localeProvider.notifier);
+
+    return [
+      NameOnTap(
+        title: "ENG",
+        onTap: () {
+          localeNotifier.changeLocale(const Locale('en', 'US'));
+        },
+      ),
+      NameOnTap(
+        title: "فا",
+        onTap: () {
+          localeNotifier.changeLocale(const Locale('fa', 'IR'));
+        },
+      ),
+    ];
+  }
 
   static List<NameOnTap> get headerItems => [
         NameOnTap(
@@ -184,67 +181,73 @@ class HeaderRow extends StatelessWidget {
         ),
       );
 
-  Widget _headerItemList(
-    WidgetRef ref,
-  ) =>
-      Row(
-        children: [
-          ...headerItems
-              .map(
-                (item) => item.title == LocaleKeys.header_themes.tr
-                    ? const Text("")
-                    : MouseRegion(
-                        cursor: SystemMouseCursors.click,
-                        child: Container(
-                          margin: const EdgeInsets.only(right: 15),
-                          child: GestureDetector(
-                            onTap: () {
-                              _onTapHeaderItem(item, ref);
-                            },
-                            child: _headerItemTitle(item),
-                          ),
+  Widget _headerItemList(WidgetRef ref) {
+    final languageItems = languageOptions(ref);
+    return Row(
+      children: [
+        ...headerItems
+            .map(
+              (item) => item.title == LocaleKeys.header_themes.tr
+                  ? const Text("")
+                  : MouseRegion(
+                      cursor: SystemMouseCursors.click,
+                      child: Container(
+                        margin: const EdgeInsets.only(right: 15),
+                        child: GestureDetector(
+                          onTap: () {
+                            _onTapHeaderItem(item, ref);
+                          },
+                          child: _headerItemTitle(item),
                         ),
                       ),
-              )
-              .toList(),
-          const SizedBox(width: 10, height: 20, child: VerticalDivider()),
-          ...languageItems
-              .map(
-                (item) => MouseRegion(
-                  cursor: SystemMouseCursors.click,
-                  child: Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 5),
-                    child: GestureDetector(
-                      onTap: () {
-                        item.onTap();
-                      },
-                      child: _languageItemTitle(item),
                     ),
+            )
+            .toList(),
+        const SizedBox(width: 10, height: 20, child: VerticalDivider()),
+        ...languageItems
+            .map(
+              (item) => MouseRegion(
+                cursor: SystemMouseCursors.click,
+                child: Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 5),
+                  child: GestureDetector(
+                    onTap: () {
+                      item.onTap();
+                    },
+                    child: _languageItemTitle(item),
                   ),
                 ),
-              )
-              .toList(),
-          const SizedBox(width: 10),
-          themeSwitch
-        ],
-      );
+              ),
+            )
+            .toList(),
+        const SizedBox(width: 10),
+        themeSwitch
+      ],
+    );
+  }
 
-  Widget _headerItemTitle(NameOnTap item) => Text(
-        item.title,
-        style: TextStyle(
-          color: item.title == "Blogs" ? kPrimaryColor : null,
-          fontSize: 14.0,
-          fontWeight: FontWeight.bold,
-          letterSpacing: 2,
-        ),
+  Widget _headerItemTitle(NameOnTap item) => Consumer(
+        builder: (context, ref, child) {
+          final locale = ref.watch(localeProvider);
+
+          return Text(
+            item.title,
+            style: TextStyle(
+              color: item.title == "Blogs" ? kPrimaryColor : null,
+              fontSize: 14.0,
+              fontWeight: FontWeight.bold,
+              letterSpacing: locale.languageCode == 'fa' ? 0 : 2,
+            ),
+          );
+        },
       );
 
   Widget _languageItemTitle(NameOnTap item) => Text(
         item.title,
-        style: const TextStyle(
+        style: TextStyle(
           fontSize: 12.0,
           fontWeight: FontWeight.normal,
-          letterSpacing: 2,
+          letterSpacing: item.title == "فا" ? 0 : 2,
         ),
       );
 

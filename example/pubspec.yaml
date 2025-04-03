@@ -28,19 +28,14 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
-  flutter:
-    sdk: flutter
-  get: ^4.6.5
-  animated_theme_switcher: ^2.0.6
-  carousel_slider: ^5.0.0
-  flutter_riverpod: ^1.0.3
-  flutter_svg: ^1.0.3
-  google_fonts: ^4.0.1
-  responsive_framework: ^0.1.7
-  url_launcher: ^6.0.20
-
   beigi_portfolio:
     path: ../
+  animated_theme_switcher: ^2.0.6
+  get: ^4.6.5
+  shared_preferences: ^2.5.3
+  flutter_riverpod: ^1.0.3
+  flutter:
+    sdk: flutter
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
