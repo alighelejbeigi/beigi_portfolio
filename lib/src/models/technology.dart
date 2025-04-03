@@ -13,6 +13,8 @@ class TechnologyConstants {
   static TechnologyModel php = TechnologyModel("php", AppConstants.phpImage);
   static TechnologyModel flutter =
       TechnologyModel("Flutter", AppConstants.flutterImage);
+  static TechnologyModel dartLogo =
+      TechnologyModel("Dart", AppConstants.dartImage);
   static TechnologyModel flask =
       TechnologyModel("Flask", AppConstants.flaskImage);
   static TechnologyModel firebase =
@@ -45,6 +47,7 @@ class TechnologyConstants {
 
   static List<TechnologyModel> technologyLearned = [
     flutter,
+    dartLogo,
     restApi,
     git,
     scrum,

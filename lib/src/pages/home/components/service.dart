@@ -156,8 +156,8 @@ class ServiceSection extends StatelessWidget {
   Widget _downloadCvButton() => GestureDetector(
         onTap: () {
           Utilities.openUrl(
-            Uri.https("linkedin.com",
-                "/in/ali-ghelej-beigi/" /* "/AgnelSelvan/AgnelSelvan.github.io/raw/main/assets/files/Agnel-Selvan.pdf"*/
+            Uri.https(
+                "alighelejbeigi.ir/raw/main/assets/resume.pdf" /* "/AgnelSelvan/AgnelSelvan.github.io/raw/main/assets/files/Agnel-Selvan.pdf"*/
                 ),
           );
         },

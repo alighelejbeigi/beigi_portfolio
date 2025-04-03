@@ -35,6 +35,7 @@ class ProjectModel {
         'alibeigi95/flower_app',
       ),
       techUsed: [
+        TechnologyConstants.dartLogo,
         TechnologyConstants.flutter,
         TechnologyConstants.figma,
         TechnologyConstants.restApi,
@@ -52,6 +53,7 @@ class ProjectModel {
         'alibeigi95/todo_app_with_hive_and_bloc',
       ),
       techUsed: [
+        TechnologyConstants.dartLogo,
         TechnologyConstants.flutter,
         TechnologyConstants.git,
       ],
@@ -67,6 +69,7 @@ class ProjectModel {
         'alibeigi95',
       ),
       techUsed: [
+        TechnologyConstants.dartLogo,
         TechnologyConstants.flutter,
         TechnologyConstants.figma,
         TechnologyConstants.restApi,
@@ -84,6 +87,7 @@ class ProjectModel {
         'alibeigi95',
       ),
       techUsed: [
+        TechnologyConstants.dartLogo,
         TechnologyConstants.flutter,
         TechnologyConstants.git,
         TechnologyConstants.restApi,
@@ -100,6 +104,7 @@ class ProjectModel {
         'alibeigi95',
       ),
       techUsed: [
+        TechnologyConstants.dartLogo,
         TechnologyConstants.flutter,
         TechnologyConstants.git,
         TechnologyConstants.restApi,
@@ -117,6 +122,7 @@ class ProjectModel {
       ),
       techUsed: [
         TechnologyConstants.git,
+        TechnologyConstants.dartLogo,
       ],
       buttonText: LocaleKeys.project_github_link_button,
     ),

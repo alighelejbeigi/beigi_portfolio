@@ -11,9 +11,9 @@ import '../../../utils/constants.dart';
 import '../../../utils/screen_helper.dart';
 
 final List<Stat> stats = [
-  Stat(count: "3+", text: LocaleKeys.stats_projects),
-  Stat(count: "5+", text: LocaleKeys.stats_year_experience_it),
-  Stat(count: "1", text: LocaleKeys.stats_year_experience_flutter),
+  Stat(count: "6+", text: LocaleKeys.stats_projects),
+  Stat(count: "6+", text: LocaleKeys.stats_year_experience_it),
+  Stat(count: "2+", text: LocaleKeys.stats_year_experience_flutter),
 ];
 
 class PortfolioStats extends StatelessWidget {

@@ -54,6 +54,7 @@ class AppConstants {
 
   static const _techImages = "${_images}technology/";
   static const flutterImage = "${_techImages}flutter.png";
+  static const dartImage = "${_techImages}Dart.png";
   static const pythonImage = "${_techImages}python.png";
   static const phpImage = "${_techImages}php.png";
   static const flaskImage = "${_techImages}flask.png";
