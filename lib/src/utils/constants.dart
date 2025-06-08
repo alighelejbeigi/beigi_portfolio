@@ -75,15 +75,17 @@ class AppConstants {
   static const cssImage = "${_techImages}css.png";
 
   static const _projectsImages = "${_images}projects/";
-  static const smartStoreImage = "${_projectsImages}1.jpeg";
-  static const crossTheRoadImage = "${_projectsImages}2.jpeg";
-  static const newsUpImage = "${_projectsImages}3.jpeg";
-  static const musicLabImage = "${_projectsImages}4.jpeg";
-  static const personalFaceImage = "${_projectsImages}5.jpeg";
-  static const computerStoreImage = "${_projectsImages}6.jpeg";
-  static const newAppComingSoonImage = "${_projectsImages}7.jpg";
-  static const flutterLogoImage = "${_projectsImages}8.png";
-  static const dartLogoImage = "${_projectsImages}9.png";
+  static const easyQRCodeImage = "${_projectsImages}1.png";
+  static const easyMssqlWindowsImage = "${_projectsImages}2.png";
+  static const aiChatImage = "${_projectsImages}3.png";
+  static const mathSolverImage = "${_projectsImages}4.png";
+  static const cryptoTrackerImage = "${_projectsImages}5.png";
+  static const flowerShopImage = "${_projectsImages}6.png";
+  static const todoListImage = "${_projectsImages}7.png";
+  static const qrHubAppImage = "${_projectsImages}8.png";
+  static const newAppComingSoonImage = "${_projectsImages}comingSoon.jpg";
+  static const flutterLogoImage = "${_projectsImages}flutter.png";
+  static const dartLogoImage = "${_projectsImages}dart.png";
 
   static List<NameOnTap> socialLoginData = [
     NameOnTap(

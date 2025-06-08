@@ -29,7 +29,7 @@ class ProjectModel {
       project: LocaleKeys.project_type_flutter,
       title: LocaleKeys.project_title_flower,
       description: LocaleKeys.project_description_flower,
-      appPhotos: AppConstants.flutterLogoImage,
+      appPhotos: AppConstants.flowerShopImage,
       projectLink: Uri.https(
         'www.github.com',
         'alibeigi95/flower_app',
@@ -47,7 +47,7 @@ class ProjectModel {
       project: LocaleKeys.project_type_flutter,
       title: LocaleKeys.project_title_todo,
       description: LocaleKeys.project_description_todo,
-      appPhotos: AppConstants.flutterLogoImage,
+      appPhotos: AppConstants.todoListImage,
       projectLink: Uri.https(
         'www.github.com',
         'alibeigi95/todo_app_with_hive_and_bloc',
@@ -63,7 +63,7 @@ class ProjectModel {
       project: LocaleKeys.project_type_flutter,
       title: LocaleKeys.project_title_crypto,
       description: LocaleKeys.project_description_crypto,
-      appPhotos: AppConstants.newAppComingSoonImage,
+      appPhotos: AppConstants.cryptoTrackerImage,
       projectLink: Uri.https(
         'www.github.com',
         'alibeigi95',
@@ -81,7 +81,7 @@ class ProjectModel {
       project: LocaleKeys.project_type_flutter,
       title: LocaleKeys.project_title_ai,
       description: LocaleKeys.project_description_ai,
-      appPhotos: AppConstants.newAppComingSoonImage,
+      appPhotos: AppConstants.aiChatImage,
       projectLink: Uri.https(
         'www.github.com',
         'alibeigi95',
@@ -98,7 +98,7 @@ class ProjectModel {
       project: LocaleKeys.project_type_flutter,
       title: LocaleKeys.project_title_math_solver,
       description: LocaleKeys.project_description_math_solver,
-      appPhotos: AppConstants.newAppComingSoonImage,
+      appPhotos: AppConstants.mathSolverImage,
       projectLink: Uri.https(
         'www.github.com',
         'alibeigi95',
