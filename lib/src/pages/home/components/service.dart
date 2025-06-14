@@ -55,6 +55,7 @@ class ServiceSection extends StatelessWidget {
           builder: (context, ref, _) => Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
+              const SizedBox(height: 40),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [

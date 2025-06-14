@@ -9,13 +9,17 @@ import '../../../../generated/locales.g.dart';
 import '../../../models/project.dart';
 import '../../../provider/theme.dart';
 import '../../../utils/constants.dart';
+import '../../../utils/description_popup_text.dart';
 import '../../../utils/screen_helper.dart';
 import '../../../utils/utils.dart';
 
 class ProjectSection extends StatelessWidget {
   final List<ProjectModel> projects;
 
-  const ProjectSection({Key? key, required this.projects}) : super(key: key);
+  const ProjectSection({
+    Key? key,
+    required this.projects,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) => ScreenHelper(
@@ -100,7 +104,7 @@ class ProjectSection extends StatelessWidget {
             const SizedBox(height: 15.0),
             _projectTitle(projectModel, ref),
             const SizedBox(height: 10.0),
-            _projectDescription(projectModel),
+            DescriptionPopupText(projectModel.description.tr),
             const SizedBox(height: 20.0),
             _technologyUsedTitle(projectModel, ref),
             _technologyUsedList(projectModel),
@@ -184,15 +188,6 @@ class ProjectSection extends StatelessWidget {
           color: ref.watch(themeProvider).isDarkMode
               ? MyThemes.lightScaffoldBackgroundColor
               : MyThemes.darkScaffoldBackgroundColor,
-        ),
-      );
-
-  Widget _projectDescription(ProjectModel projectModel) => Text(
-        projectModel.description.tr,
-        style: const TextStyle(
-          color: kCaptionColor,
-          height: 1.5,
-          fontSize: 15.0,
         ),
       );
 

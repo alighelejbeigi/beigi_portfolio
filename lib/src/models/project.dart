@@ -26,13 +26,64 @@ class ProjectModel {
 
   static List<ProjectModel> projects = [
     ProjectModel(
+      project: LocaleKeys.project_type_flutter_package,
+      title: LocaleKeys.project_title_easy_qr_code,
+      description: LocaleKeys.project_description_easy_qr_code,
+      appPhotos: AppConstants.easyQRCodeImage,
+      projectLink: Uri.https(
+        'www.github.com',
+        'alighelejbeigi/easy_qr_code',
+      ),
+      techUsed: [
+        TechnologyConstants.dartLogo,
+        TechnologyConstants.flutter,
+        TechnologyConstants.figma,
+        TechnologyConstants.git,
+      ],
+      buttonText: LocaleKeys.project_github_link_button,
+    ),
+    ProjectModel(
+      project: LocaleKeys.project_type_flutter_package,
+      title: LocaleKeys.project_title_easy_mssql_windows,
+      description: LocaleKeys.project_description_easy_mssql_windows,
+      appPhotos: AppConstants.easyMssqlWindowsImage,
+      projectLink: Uri.https(
+        'www.github.com',
+        'alighelejbeigi/easy_mssql_windows',
+      ),
+      techUsed: [
+        TechnologyConstants.dartLogo,
+        TechnologyConstants.flutter,
+        TechnologyConstants.figma,
+        TechnologyConstants.git,
+      ],
+      buttonText: LocaleKeys.project_github_link_button,
+    ),
+    ProjectModel(
+      project: LocaleKeys.project_type_flutter,
+      title: LocaleKeys.project_title_qr_hub,
+      description: LocaleKeys.project_description_qr_hub,
+      appPhotos: AppConstants.qrHubAppImage,
+      projectLink: Uri.https(
+        'www.github.com',
+        'alighelejbeigi/qr_hub',
+      ),
+      techUsed: [
+        TechnologyConstants.dartLogo,
+        TechnologyConstants.flutter,
+        TechnologyConstants.figma,
+        TechnologyConstants.git,
+      ],
+      buttonText: LocaleKeys.project_github_link_button,
+    ),
+    ProjectModel(
       project: LocaleKeys.project_type_flutter,
       title: LocaleKeys.project_title_flower,
       description: LocaleKeys.project_description_flower,
       appPhotos: AppConstants.flowerShopImage,
       projectLink: Uri.https(
         'www.github.com',
-        'alibeigi95/flower_app',
+        'alighelejbeigi/flower_app',
       ),
       techUsed: [
         TechnologyConstants.dartLogo,
@@ -50,7 +101,7 @@ class ProjectModel {
       appPhotos: AppConstants.todoListImage,
       projectLink: Uri.https(
         'www.github.com',
-        'alibeigi95/todo_app_with_hive_and_bloc',
+        'alighelejbeigi/todo_app_with_hive_and_bloc',
       ),
       techUsed: [
         TechnologyConstants.dartLogo,
@@ -66,7 +117,7 @@ class ProjectModel {
       appPhotos: AppConstants.cryptoTrackerImage,
       projectLink: Uri.https(
         'www.github.com',
-        'alibeigi95',
+        'alighelejbeigi/crypto_currency_tracker',
       ),
       techUsed: [
         TechnologyConstants.dartLogo,
@@ -84,7 +135,7 @@ class ProjectModel {
       appPhotos: AppConstants.aiChatImage,
       projectLink: Uri.https(
         'www.github.com',
-        'alibeigi95',
+        'alighelejbeigi/ai_chat',
       ),
       techUsed: [
         TechnologyConstants.dartLogo,
@@ -101,7 +152,7 @@ class ProjectModel {
       appPhotos: AppConstants.mathSolverImage,
       projectLink: Uri.https(
         'www.github.com',
-        'alibeigi95',
+        'alighelejbeigi/math_solver',
       ),
       techUsed: [
         TechnologyConstants.dartLogo,
@@ -118,7 +169,7 @@ class ProjectModel {
       appPhotos: AppConstants.dartLogoImage,
       projectLink: Uri.https(
         'www.github.com',
-        'alibeigi95/bus_app_oop_2',
+        'alighelejbeigi/bus_app_oop_2',
       ),
       techUsed: [
         TechnologyConstants.git,

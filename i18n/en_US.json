@@ -23,19 +23,26 @@
     "description": "Here are some of my Previous Work :)"
   },
   "project": {
+    "type_flutter_package": "Flutter Package",
     "type_flutter": "Flutter App",
     "type_dart": "Dart App",
     "github_link_button": "Github Link",
     "explore_more_button": "EXPLORE MORE",
+    "title_qr_hub": "Qr Hub",
+    "description_qr_hub": "QR Hub is a simple and efficient tool for scanning and generating QR codes. With this app, you can detect QR codes using your camera or from existing images, and easily create your own custom codes. Enjoy its beautiful design and fast performance!",
+    "title_easy_qr_code": "Easy Qr Code",
+    "description_easy_qr_code": "Effortlessly create and read QR codes in your Flutter app.\nWith easy_qr_code, you can easily generate QR codes from text and decode QR codes from images, simplifying QR code integration in your apps with minimal setup.",
+    "title_easy_mssql_windows": "Easy MSSQL Windows",
+    "description_easy_mssql_windows": "A Flutter package designed to simplify connecting a Flutter desktop application on Windows to a Microsoft SQL Server database using ODBC. It provides straightforward methods for establishing a connection, executing queries, and managing the disconnection process.",
     "title_flower": "Flower shop App",
-    "description_flower": "This is a sample project with used Json server for training and have two rol manager and customers",
+    "description_flower": "This is a project with used Json server for training and have two rol manager and customers",
     "title_todo": "Todo App With Hive And Bloc",
     "description_todo": "Implementation Todo list for used local database and Bloc state management for learning",
-    "title_crypto": "Crypto Price(Coming soon)",
+    "title_crypto": "Crypto Price",
     "description_crypto": "I want build Crypto price tracker with push notification",
-    "title_ai": "AI Chat Bot(Coming soon)",
+    "title_ai": "AI Chat Bot",
     "description_ai": "A Simple AI chat with gemini",
-    "title_math_solver": "Math Solver AI With Image(Coming Soon)",
+    "title_math_solver": "Math Solver AI With Image",
     "description_math_solver": "Math Solver AI with image and gemini google for making easy to get answer the hard math problem ",
     "title_bus": "Bus Ticket Reservation",
     "description_bus": "Implementation OPP for reserve Bus ticket in dart before get into the flutter.",
@@ -65,5 +72,8 @@
     "contact": "Contact",
     "blog": "Blog",
     "themes": "Themes"
+  },
+  "share": {
+    "close": "Close"
   }
 }

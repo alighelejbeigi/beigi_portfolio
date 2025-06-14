@@ -34,6 +34,7 @@ class _AboutSectionState extends State<AboutSection> {
             minWidth: width,
             child: Column(
               children: [
+                const SizedBox(height: 100),
                 Flex(
                   direction: constraints.maxWidth > 720
                       ? Axis.horizontal

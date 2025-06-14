@@ -17,7 +17,7 @@ double getMobileMaxWidth(BuildContext context) =>
 class AppConstants {
   static Uri linkedInUrl = Uri.https(
     'www.linkedin.com',
-    'in/ali-ghelej-beigi/',
+    'in/alighelejbeigi/',
   );
   static Uri instagramUrl = Uri.https(
     'www.instagram.com',
@@ -25,10 +25,11 @@ class AppConstants {
   );
   static Uri githubUrl = Uri.https(
     'github.com',
-    'alibeigi95/',
+    'alighelejbeigi/',
   );
   static Uri mediumUrl = Uri.https(
     'medium.com',
+    '@alighelejbeigi',
   );
 
   static const _assets = "assets/";
@@ -46,11 +47,13 @@ class AppConstants {
   static const linkedInImage = "${_socialImages}linkedin-logo.png";
   static const instagramImage = "${_socialImages}instagram.png";
   static const githubImage = "${_socialImages}github.png";
+  static const mediumImage = "${_socialImages}medium.png";
 
   static const emailImageDark = "${_socialImages}email-dark.png";
   static const linkedInImageDark = "${_socialImages}linkedin-logo-dark.png";
   static const instagramImageDark = "${_socialImages}instagram-dark.png";
   static const githubImageDark = "${_socialImages}github-dark.png";
+  static const mediumImageDark = "${_socialImages}medium-dark.png";
 
   static const _techImages = "${_images}technology/";
   static const flutterImage = "${_techImages}flutter.png";
@@ -108,6 +111,11 @@ class AppConstants {
         onTap: () {
           Utilities.openUrl(githubUrl);
         }),
+    NameOnTap(
+        title: mediumImage,
+        onTap: () {
+          Utilities.openUrl(mediumUrl);
+        }),
   ];
 
   static List<NameOnTap> socialLoginDataDark = [
@@ -130,6 +138,11 @@ class AppConstants {
         title: githubImageDark,
         onTap: () {
           Utilities.openUrl(githubUrl);
+        }),
+    NameOnTap(
+        title: mediumImageDark,
+        onTap: () {
+          Utilities.openUrl(mediumUrl);
         }),
   ];
 }

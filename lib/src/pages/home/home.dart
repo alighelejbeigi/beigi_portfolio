@@ -63,7 +63,7 @@ class _HomeState extends ConsumerState<Home>
                   ),
                   SizedBox(
                     key: _homeProvider.portfolioKey,
-                    height: 100.0,
+                    height: 120.0,
                   ),
                   _portfolioSection(),
                   ProjectSection(

@@ -26,10 +26,20 @@ class LocaleKeys {
   static const service_description = 'service_description';
   static const home_portfolio = 'home_portfolio';
   static const home_description = 'home_description';
+  static const project_type_flutter_package = 'project_type_flutter_package';
   static const project_type_flutter = 'project_type_flutter';
   static const project_type_dart = 'project_type_dart';
   static const project_github_link_button = 'project_github_link_button';
   static const project_explore_more_button = 'project_explore_more_button';
+  static const project_title_qr_hub = 'project_title_qr_hub';
+  static const project_description_qr_hub = 'project_description_qr_hub';
+  static const project_title_easy_qr_code = 'project_title_easy_qr_code';
+  static const project_description_easy_qr_code =
+      'project_description_easy_qr_code';
+  static const project_title_easy_mssql_windows =
+      'project_title_easy_mssql_windows';
+  static const project_description_easy_mssql_windows =
+      'project_description_easy_mssql_windows';
   static const project_title_flower = 'project_title_flower';
   static const project_description_flower = 'project_description_flower';
   static const project_title_todo = 'project_title_todo';
@@ -63,6 +73,7 @@ class LocaleKeys {
   static const header_contact = 'header_contact';
   static const header_blog = 'header_blog';
   static const header_themes = 'header_themes';
+  static const share_close = 'share_close';
 }
 
 class Locales {
@@ -84,22 +95,32 @@ class Locales {
     'service_description': 'I may not be perfect, but I\'m surely of some help',
     'home_portfolio': 'Portfolio',
     'home_description': 'Here are some of my Previous Work :)',
+    'project_type_flutter_package': 'Flutter Package',
     'project_type_flutter': 'Flutter App',
     'project_type_dart': 'Dart App',
     'project_github_link_button': 'Github Link',
     'project_explore_more_button': 'EXPLORE MORE',
+    'project_title_qr_hub': 'Qr Hub',
+    'project_description_qr_hub':
+        'QR Hub is a simple and efficient tool for scanning and generating QR codes. With this app, you can detect QR codes using your camera or from existing images, and easily create your own custom codes. Enjoy its beautiful design and fast performance!',
+    'project_title_easy_qr_code': 'Easy Qr Code',
+    'project_description_easy_qr_code':
+        'Effortlessly create and read QR codes in your Flutter app.\nWith easy_qr_code, you can easily generate QR codes from text and decode QR codes from images, simplifying QR code integration in your apps with minimal setup.',
+    'project_title_easy_mssql_windows': 'Easy MSSQL Windows',
+    'project_description_easy_mssql_windows':
+        'A Flutter package designed to simplify connecting a Flutter desktop application on Windows to a Microsoft SQL Server database using ODBC. It provides straightforward methods for establishing a connection, executing queries, and managing the disconnection process.',
     'project_title_flower': 'Flower shop App',
     'project_description_flower':
-        'This is a sample project with used Json server for training and have two rol manager and customers',
+        'This is a project with used Json server for training and have two rol manager and customers',
     'project_title_todo': 'Todo App With Hive And Bloc',
     'project_description_todo':
         'Implementation Todo list for used local database and Bloc state management for learning',
-    'project_title_crypto': 'Crypto Price(Coming soon)',
+    'project_title_crypto': 'Crypto Price',
     'project_description_crypto':
         'I want build Crypto price tracker with push notification',
-    'project_title_ai': 'AI Chat Bot(Coming soon)',
+    'project_title_ai': 'AI Chat Bot',
     'project_description_ai': 'A Simple AI chat with gemini',
-    'project_title_math_solver': 'Math Solver AI With Image(Coming Soon)',
+    'project_title_math_solver': 'Math Solver AI With Image',
     'project_description_math_solver':
         'Math Solver AI with image and gemini google for making easy to get answer the hard math problem ',
     'project_title_bus': 'Bus Ticket Reservation',
@@ -125,6 +146,7 @@ class Locales {
     'header_contact': 'Contact',
     'header_blog': 'Blog',
     'header_themes': 'Themes',
+    'share_close': 'Close',
   };
   static const fa_IR = {
     'carousel_item_first_title': 'توسعه‌دهنده نرم‌افزارهای موبایل و وب',
@@ -144,23 +166,32 @@ class Locales {
     'service_description': 'شاید من کامل نباشم، اما قطعاً کمکی می‌کنم',
     'home_portfolio': 'نمونه کارها',
     'home_description': 'اینجا برخی از کارهای قبلی من هستند :)',
+    'project_type_flutter_package': 'پکیج فلاتر',
     'project_type_flutter': 'اپلیکیشن فلاتر',
     'project_type_dart': 'اپلیکیشن دارت',
     'project_github_link_button': 'لینک گیت‌هاب',
     'project_explore_more_button': 'بیشتر بدانید',
+    'project_title_qr_hub': 'کیوآر هاب',
+    'project_description_qr_hub':
+        'اپلیکیشن QR Hub ابزاری ساده و کارآمد برای اسکن و تولید کدهای QR است. با این برنامه می‌توانید کدهای QR را از طریق دوربین یا تصاویر موجود شناسایی کنید و به‌راحتی کدهای شخصی خود را بسازید. از طراحی زیبا و عملکرد سریع آن لذت ببرید!',
+    'project_title_easy_qr_code': 'ایزی کیوآر کد',
+    'project_description_easy_qr_code':
+        'به‌راحتی کدهای QR را در اپلیکیشن فلاتر خود ایجاد و خوانده کنید.\nبا استفاده از easy_qr_code می‌توانید به‌سادگی از متن کد QR بسازید و آن‌ها را از تصاویر رمزگشایی کنید؛ این بسته ادغام QR را با تنظیمات حداقلی ساده می‌کند.',
+    'project_title_easy_mssql_windows': 'ایزی ام‌اس‌اس‌کیو‌ال ویندوز',
+    'project_description_easy_mssql_windows':
+        'یک پکیج فلاتر که برای ساده‌سازی اتصال اپلیکیشن دسکتاپ ویندوز به پایگاه داده Microsoft SQL Server از طریق ODBC طراحی شده است. این ابزار روش‌هایی ساده برای برقراری اتصال، اجرای کوئری‌ها و مدیریت قطع اتصال فراهم می‌کند.',
     'project_title_flower': 'اپلیکیشن فروشگاه گل',
     'project_description_flower':
         'این یک پروژه نمونه است که از سرور جیسون برای آموزش استفاده شده و دو نقش مدیر و مشتری را دارد',
     'project_title_todo': 'اپلیکیشن لیست کارها با استفاده از Hive و Bloc',
     'project_description_todo':
         'پیاده‌سازی لیست کارها برای استفاده از پایگاه داده محلی و مدیریت وضعیت Bloc برای یادگیری',
-    'project_title_crypto': 'قیمت‌گذاری کریپتو (به زودی)',
+    'project_title_crypto': 'قیمت‌گذاری کریپتو',
     'project_description_crypto':
         'من می‌خواهم یک ردیاب قیمت کریپتو با اعلان پوش بسازم',
-    'project_title_ai': 'ربات گپ هوش مصنوعی (به زودی)',
+    'project_title_ai': 'ربات گپ هوش مصنوعی',
     'project_description_ai': 'یک چت ساده هوش مصنوعی با جمینی',
-    'project_title_math_solver':
-        'راه‌حل‌گر ریاضی با هوش مصنوعی و تصویر (به زودی)',
+    'project_title_math_solver': 'راه‌حل‌گر ریاضی با هوش مصنوعی و تصویر',
     'project_description_math_solver':
         'راه‌حل‌گر ریاضی با هوش مصنوعی و تصویر و گوگل جمینی برای راحتی دریافت پاسخ مسائل ریاضی دشوار',
     'project_title_bus': 'رزرو بلیط اتوبوس',
@@ -186,5 +217,6 @@ class Locales {
     'header_contact': 'تماس',
     'header_blog': 'وبلاگ',
     'header_themes': 'تم سایت',
+    'share_close': 'بستن',
   };
 }
