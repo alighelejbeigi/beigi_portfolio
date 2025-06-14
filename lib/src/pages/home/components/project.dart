@@ -212,7 +212,7 @@ class ProjectSection extends StatelessWidget {
         child: Image.asset(
           projectModel.appPhotos,
           width: constraints.maxWidth > 720.0 ? null : 350.0,
-          height: 250,
+          height: ScreenHelper.isMobile(context) ? 280 : 350,
           package: 'beigi_portfolio',
         ),
       );
