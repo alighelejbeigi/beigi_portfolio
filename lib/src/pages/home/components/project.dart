@@ -104,7 +104,7 @@ class ProjectSection extends StatelessWidget {
             const SizedBox(height: 15.0),
             _projectTitle(projectModel, ref),
             const SizedBox(height: 10.0),
-            DescriptionPopupText(projectModel.description.tr),
+            DescriptionPopupText(text: projectModel.description.tr),
             const SizedBox(height: 20.0),
             _technologyUsedTitle(projectModel, ref),
             _technologyUsedList(projectModel),

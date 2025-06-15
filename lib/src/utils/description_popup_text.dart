@@ -8,7 +8,10 @@ import 'constants.dart';
 class DescriptionPopupText extends StatefulWidget {
   final String text;
 
-  const DescriptionPopupText(this.text, {super.key});
+  const DescriptionPopupText({
+    required this.text,
+    super.key,
+  });
 
   @override
   State<DescriptionPopupText> createState() => _DescriptionPopupTextState();
