@@ -207,13 +207,19 @@ class _HomeState extends ConsumerState<Home>
               onPressed: () {
                 localeNotifier.changeLocale(const Locale('en', 'US'));
               },
-              child: const Text('ENG'),
+              child: Text(
+                'ENG',
+                style: TextStyle(color: _textAndIconColor()),
+              ),
             ),
             TextButton(
               onPressed: () {
                 localeNotifier.changeLocale(const Locale('fa', 'IR'));
               },
-              child: const Text('فا'),
+              child: Text(
+                'فا',
+                style: TextStyle(color: _textAndIconColor()),
+              ),
             ),
           ],
         ),
