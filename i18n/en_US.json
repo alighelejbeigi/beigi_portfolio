@@ -74,6 +74,7 @@
     "themes": "Themes"
   },
   "share": {
-    "close": "Close"
+    "close": "Close",
+    "language": "Language"
   }
 }

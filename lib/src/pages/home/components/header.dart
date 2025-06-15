@@ -158,10 +158,15 @@ class HeaderRow extends StatelessWidget {
           iconData: Icons.article,
         ),
         NameOnTap(
+            title: LocaleKeys.share_language.tr,
+            onTap: () {},
+            iconData: Icons.language,
+            hasLanguage: true),
+        NameOnTap(
           title: LocaleKeys.header_themes.tr,
           onTap: () {},
           iconData: Icons.light_mode_outlined,
-          isDarkTheme: true,
+          hasSwitch: true,
         ),
       ];
 

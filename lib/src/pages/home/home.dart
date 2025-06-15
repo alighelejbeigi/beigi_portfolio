@@ -5,9 +5,9 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../../../beigi_portfolio.dart';
 import '../../models/project.dart';
 import '../../provider/home.dart';
-import '../../provider/theme.dart';
 import '../../utils/globals.dart';
 import '../../utils/screen_helper.dart';
 import '../../widgets/switch.dart';
@@ -142,7 +142,7 @@ class _HomeState extends ConsumerState<Home>
             child: SafeArea(
               child: Padding(
                 padding: _paddingThemeSwitchArea(),
-                child: _drawerList(),
+                child: _drawerList(ref),
               ),
             ),
           ),
@@ -150,40 +150,76 @@ class _HomeState extends ConsumerState<Home>
         ),
       );
 
-  Widget _drawerList() => ListView.separated(
-        itemBuilder: (BuildContext context, int index) => ListTile(
-          onTap: () {
-            _onTapDrawer(context, index);
-          },
-          leading: Icon(HeaderRow.headerItems[index].iconData,
-              color: _textAndIconColor()),
-          title: Text(
-            HeaderRow.headerItems[index].title,
-            style: TextStyle(color: _textAndIconColor()),
-          ),
-          trailing: HeaderRow.headerItems[index].isDarkTheme != null
-              ? HeaderRow.headerItems[index].isDarkTheme!
-                  ? _switchTheme(context)
-                  : null
-              : null,
-        ),
+  Widget _drawerList(WidgetRef ref) => ListView.separated(
+        itemBuilder: (BuildContext context, int index) {
+          final item = HeaderRow.headerItems[index];
+
+          Widget? trailingWidget;
+          if (item.hasSwitch == true) {
+            trailingWidget = _switchTheme(context, ref);
+          } else if (item.hasLanguage == true) {
+            trailingWidget = languageOptions(ref);
+          }
+
+          return ListTile(
+            onTap: () {
+              _onTapDrawer(context, index);
+            },
+            leading: Icon(item.iconData, color: _textAndIconColor()),
+            title: Text(
+              item.title,
+              style: TextStyle(color: _textAndIconColor()),
+            ),
+            trailing: trailingWidget,
+          );
+        },
         separatorBuilder: (BuildContext context, int index) =>
             const SizedBox(height: 10.0),
         itemCount: HeaderRow.headerItems.length,
       );
 
-  Widget _switchTheme(BuildContext context) => SizedBox(
-        width: 50,
-        child: CustomSwitch(
-          value: ref.watch(themeProvider).isDarkMode,
-          onChanged: (val) {
-            ref.read(themeProvider).changeTheme(val);
-            ThemeSwitcher.of(context).changeTheme(
-              theme: ref.read(themeProvider).getCurrentTheme,
-            );
-          },
+  Widget _switchTheme(BuildContext context, WidgetRef ref) => SizedBox(
+        height: 28,
+        child: FittedBox(
+          fit: BoxFit.scaleDown,
+          child: CustomSwitch(
+            value: ref.watch(themeProvider).isDarkMode,
+            onChanged: (val) {
+              ref.read(themeProvider).changeTheme(val);
+              ThemeSwitcher.of(context).changeTheme(
+                theme: ref.read(themeProvider).getCurrentTheme,
+              );
+            },
+          ),
         ),
       );
+
+  Widget languageOptions(WidgetRef ref) {
+    final localeNotifier = ref.read(localeProvider.notifier);
+
+    return SizedBox(
+      height: 28,
+      child: FittedBox(
+        fit: BoxFit.scaleDown,
+        child: Row(
+          children: [
+            TextButton(
+              onPressed: () {
+                localeNotifier.changeLocale(const Locale('en', 'US'));
+              },
+              child: const Text('ENG'),
+            ),
+            TextButton(
+              onPressed: () {
+                localeNotifier.changeLocale(const Locale('fa', 'IR'));
+              },
+              child: const Text('فا'),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
 
   void _onTapDrawer(BuildContext context, int index) {
     if (Globals.scaffoldKey.currentState != null) {

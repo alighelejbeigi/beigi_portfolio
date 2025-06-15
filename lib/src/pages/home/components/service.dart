@@ -157,9 +157,8 @@ class ServiceSection extends StatelessWidget {
   Widget _downloadCvButton() => GestureDetector(
         onTap: () {
           Utilities.openUrl(
-            Uri.https(
-                "alighelejbeigi.ir/raw/main/assets/resume.pdf" /* "/AgnelSelvan/AgnelSelvan.github.io/raw/main/assets/files/Agnel-Selvan.pdf"*/
-                ),
+            Uri.https('drive.google.com',
+                'file/d/1dnAJO65fI66MpzAasGNEj6q8tB6aa_gI/view'),
           );
         },
         child: MouseRegion(

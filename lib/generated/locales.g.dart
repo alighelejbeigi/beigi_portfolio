@@ -74,6 +74,7 @@ class LocaleKeys {
   static const header_blog = 'header_blog';
   static const header_themes = 'header_themes';
   static const share_close = 'share_close';
+  static const share_language = 'share_language';
 }
 
 class Locales {
@@ -147,6 +148,7 @@ class Locales {
     'header_blog': 'Blog',
     'header_themes': 'Themes',
     'share_close': 'Close',
+    'share_language': 'Language',
   };
   static const fa_IR = {
     'carousel_item_first_title': 'توسعه‌دهنده نرم‌افزارهای موبایل و وب',
@@ -218,5 +220,6 @@ class Locales {
     'header_blog': 'وبلاگ',
     'header_themes': 'تم سایت',
     'share_close': 'بستن',
+    'share_language': 'زبان',
   };
 }

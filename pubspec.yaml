@@ -11,7 +11,7 @@ dependencies:
   flutter:
     sdk: flutter
   shared_preferences: ^2.5.3
-  animated_theme_switcher: ^2.0.6
+  animated_theme_switcher: ^2.0.10
   carousel_slider: ^5.0.0
   cupertino_icons: ^1.0.2
   flutter_riverpod: ^1.0.3

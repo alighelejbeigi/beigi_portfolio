@@ -85,40 +85,37 @@ Widget _socialList(WidgetRef ref) => Row(
               .toList(),
     );
 
-Widget _talkButton() => Material(
-      child: DecoratedBox(
-        decoration: BoxDecoration(
-          color: kPrimaryColor,
-          borderRadius: BorderRadius.circular(8.0),
-        ),
-        child: InkWell(
-          onTap: () => Utilities.openUrl(AppConstants.linkedInUrl),
-          child: Container(
-            decoration: BoxDecoration(
-              color: kPrimaryColor,
-              borderRadius: BorderRadius.circular(8.0),
-            ),
-            height: 48.0,
-            padding: const EdgeInsets.symmetric(
-              horizontal: 28.0,
-            ),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Text(
+Widget _talkButton() => Row(
+      children: [
+        MouseRegion(
+          cursor: SystemMouseCursors.click,
+          child: InkWell(
+            onTap: () => Utilities.openUrl(AppConstants.linkedInUrl),
+            child: Container(
+              decoration: _buttonDecoration(),
+              height: 48.0,
+              padding: const EdgeInsets.symmetric(
+                horizontal: 28.0,
+              ),
+              child: Center(
+                child: Text(
                   LocaleKeys.carousel_item_button.tr,
                   style: TextStyle(
-                    color: Colors.grey[100],
                     fontSize: 13.0,
                     fontWeight: FontWeight.bold,
+                    color: Colors.grey[200],
                   ),
                 ),
-              ],
+              ),
             ),
           ),
         ),
-      ),
+      ],
+    );
+
+BoxDecoration _buttonDecoration() => BoxDecoration(
+      color: kPrimaryColor,
+      borderRadius: BorderRadius.circular(8.0),
     );
 
 Widget _subjectAndLocation() => Row(
