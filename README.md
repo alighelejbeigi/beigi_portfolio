@@ -1,39 +1,28 @@
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+👋 Hello there! I'm Ali Ghelej Beigi
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages).
+🌟 About Me
 
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages).
--->
+I’m a Frontend Developer with a background in Computer Science and 4 years of experience in network and system administration. For the past 2 years, I’ve specialized in Flutter, building user-friendly, cross-platform applications. At Taav System, I’ve worked on projects like unit sales contracts, building charge management, and Expo Plus.
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+🚀 What I'm Working On
 
-## Features
+📱 Advancing my skills in Flutter, focusing on performance optimization and mastering state management tools like GetX and Riverpod. My goal is to become a senior expert in cross-platform development.
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+💻 Exploring cutting-edge frontend technologies and creating efficient, seamless user experiences.
 
-## Getting started
+🎯 Tackling real-world challenges with innovative solutions, including personalized interfaces and workflow optimization in ERP systems.
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+🌐 Explore My Work
 
-## Usage
+Portfolio: alighelejbeigi.ir
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
+LinkedIn: Ali Ghelej Beigi
 
-```dart
-const like = 'sample';
-```
+📫 Get in Touch
 
-## Additional information
+Reach me at ghelejbeigiali@gmail.com – I’d love to connect!
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+<!---
+alibeigi95/alibeigi95 is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+You can click the Preview link to take a look at your changes.
+--->
